@@ -40,7 +40,7 @@
 - Q2 апрель–июнь: Тиль · Далио · Адамс · Брэнсон · Айзексон (Джобс) · Кларк · Кроули · Тегмарк.
 - Параллельно: Goodfellow Deep Learning (с мая), Tedrake Robotics (с июля), Sutton Rocket Propulsion (с октября).
 
-### Сертификация CCA-F — Claude Certified Associate (Foundations)
+### Сертификация CCA-F — Claude Certified Architect (Foundations)
 - Полный план: `cert_cca_f.md` (зафиксирован 08.04.2026).
 - Зачем: credibility layer для Fractional CTO — бейдж у считанных сотен людей в мире.
 - **Прогресс:** ✅ Claude 101 + AI Fluency пройдены (неделя 1 сделана). Осталось: 26 часов за 6 недель.

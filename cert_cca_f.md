@@ -1,7 +1,12 @@
-# CCA-F — Claude Certified Associate (Foundations)
+# CCA-F — Claude Certified Architect (Foundations)
 
-> Зафиксировано 08.04.2026, день 7/365.
+> Зафиксировано 08.04.2026, день 7/365. Fixed 08.04 evening: правильное название — **Architect**, не Associate. Домен — **claude.com**, не claude.ai.
 > Цель: получить официальный CCA-F бейдж от Anthropic за ≤6 недель, повесить на LinkedIn.
+> **Факты про экзамен** (verified 08.04.2026 из anthropic.com/news/claude-partner-network):
+> - 60 scenario-based MCQs, 120 минут
+> - Passing score: **720/1000** (на practice целимся 900+)
+> - Стоимость: **$99** или **$0** для первых 5000 partner employees
+> - Certification exclusive to employees of Anthropic partner companies — Partner Network вступление обязательно
 > Зачем: **credibility layer для Fractional CTO позиционирования.** Бейдж сейчас есть у считанных сотен людей в мире — редкий signal для founders при оценке.
 > Связь с Mission $100K: Phase 0 → конец Phase 1. Landing ~20.05.2026 (через 6 недель от сегодня).
 
@@ -162,11 +167,21 @@
 
 ## Что делает Кирилл вручную (не могу сделать за тебя)
 
-- [ ] **Apply to Claude Partner Network** на https://claude.com/partners — бесплатное вступление для любой организации. Это даёт шанс на $0 экзамен если в первых 5000 партнёров. **Сделать сегодня или завтра, окно закрывается.**
-- [ ] **Скачать Official Exam Guide PDF** из Skilljar после того, как зарегистрируешься на экзамен (неделя 5)
-- [ ] **Забронировать слот экзамена** на ~20.05.2026 (день 48). Заблокировать 2.5 часа в календаре.
-- [ ] **Оплатить $99** (или $0 если prtner network сработал)
-- [ ] **После сдачи:** руками обновить LinkedIn headline и Experience → добавить "Claude Certified Associate (Foundations)"
+### Срочно — окно $0 экзамена закрывается (первые 5000 партнёров)
+
+- [ ] **Шаг 1: Apply to Claude Partner Network.** Прямая ссылка регистрации: https://partnerportal.anthropic.com/s/partner-registration (landing: https://claude.com/partners). Вступление бесплатное для любой организации, нужен бизнес-email. Это единственный способ получить доступ к экзамену (certification exclusive to partner employees).
+- [ ] **Шаг 2: Request exam access** через https://anthropic.skilljar.com/claude-certified-architect-foundations-access-request — сделать сразу после approval партнёрства.
+
+### Позже (неделя 5–6)
+
+- [ ] Скачать Official Exam Guide PDF из Skilljar после получения access
+- [ ] Забронировать слот экзамена на ~20.05.2026 (день 48). Заблокировать 2.5 часа в календаре без отвлечений.
+- [ ] Оплатить $99 (или $0 если успел в первые 5000 партнёров)
+
+### После сдачи
+
+- [ ] Обновить LinkedIn headline и Experience → добавить "Claude Certified Architect (Foundations)" (могу сделать через Playwright когда скажешь)
+- [ ] Добавить бейдж в профиль LinkedIn (image badge от Anthropic)
 
 ---
 
