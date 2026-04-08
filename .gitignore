@@ -1,0 +1,27 @@
+# Secrets / dead Notion code with hardcoded tokens
+notion_*.js
+build_notion.js
+rebuild.js
+update_books.js
+
+# IDE
+.idea/
+.DS_Store
+
+# Node
+node_modules/
+package-lock.json
+
+# Sensitive documents (contracts, CV, personal)
+docs/
+
+# Playwright debug artifacts (LinkedIn snapshots with PII of outreach targets)
+.playwright-mcp/
+*.yml
+*.png
+
+# Environment / credentials
+.env
+.env.*
+*.key
+*_secret*
