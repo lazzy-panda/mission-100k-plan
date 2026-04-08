@@ -29,10 +29,27 @@
 - Playwright MCP настроен глобально — можно автоматизировать публикации.
 - ⏳ Постов пока опубликовано: **0 / 12**. Первый (TIL) — запланирован на среду 08.04.
 
+### SaaS Track 2 — Lingo (формализовано 08.04.2026)
+- Код живёт в `~/Documents/greek-app` (Next.js 16, Drizzle, Clerk, Stripe scaffolding). Форк `sanidhyy/duolingo-clone`, расширен 11 exercise modes + spaced repetition + vocabulary tracking. Полный feature inventory — `~/Documents/greek-app/APP_REPORT.md`.
+- Стратегический документ: `saas_idea_1.md` в корне этого workspace.
+- Tier 1 wedge: греческий для русскоязычных экспатов на Кипре, €12/мес. Tier 2 (с июля): мультиязычный движок. Tier 3 (с апреля 2027): Leetcode for skills — любой домен.
+- Hard kill criterion: если к концу июня нет 10 платящих, Lingo становится side-project, Fractional CTO = Track 1 фулл.
+
 ### Программа обучения (`reading_plan_365.md`)
 - 28 книг / 12 000 страниц / 365 дней. Старт — 1 апреля 2026.
 - Q2 апрель–июнь: Тиль · Далио · Адамс · Брэнсон · Айзексон (Джобс) · Кларк · Кроули · Тегмарк.
 - Параллельно: Goodfellow Deep Learning (с мая), Tedrake Robotics (с июля), Sutton Rocket Propulsion (с октября).
+
+### Сертификация CCA-F — Claude Certified Associate (Foundations)
+- Полный план: `cert_cca_f.md` (зафиксирован 08.04.2026).
+- Зачем: credibility layer для Fractional CTO — бейдж у считанных сотен людей в мире.
+- **Прогресс:** ✅ Claude 101 + AI Fluency пройдены (неделя 1 сделана). Осталось: 26 часов за 6 недель.
+- Целевая дата экзамена: ~20.05.2026 (день ~48).
+- Стоимость: $99 или $0 если попасть в первые 5000 партнёров Claude Partner Network.
+
+### Decision log
+- `decision_log/2026-04-08-notion-drop.md` — отказ от Notion, переход на file-based
+- `decision_log/2026-04-08-lingo-wedge.md` — Tier 1 wedge Lingo = греческий для русскоязычных Кипра
 
 ---
 
@@ -49,7 +66,7 @@
 | 4 | Вс 05.04 | Отдых + планирование | ☐ pre-start |
 | 5 | Пн 06.04 | LinkedIn + планирование | ✅ профиль полностью обновлён через Playwright (headline, about, experience, skills, services, projects), 12 постов готовы |
 | 6 | Вт 07.04 | SaaS + outreach | ✅ 10 cold connects отправлены, 5 warming-комментов (Teo/Akshit/Tal/Cristian/Nate), pitch + 3 DM-шаблона, `feedback_human_writing.md` зафиксирован в памяти |
-| **7** | **Ср 08.04 — сегодня** | **LinkedIn + нетворкинг** | **→ в работе** |
+| **7** | **Ср 08.04 — сегодня** | **LinkedIn + нетворкинг** | ✅ миграция с Notion, GitHub repo + iOS, контент-кит v2 (EN), пост #1 опубликован (URN 7447603321424625664) |
 
 ---
 
@@ -70,14 +87,20 @@
 - [+] Extra: зафиксирован `feedback_human_writing.md` в auto-memory — non-native English rules + hard bans на AI-vocab/idioms
 
 **Среда 08.04 — LinkedIn + нетворкинг** ← сегодня
-- [ ] Опубликовать пост #1 (TIL) — остаётся
+- [x] Опубликовать пост #1 — опубликован в 14:22 (EN, "Today I dropped Notion", Build-in-public вместо изначального TIL). URN `urn:li:activity:7447603321424625664`. Первая версия была случайно на русском, удалена, переписана на английский после полного аудита контент-кита
 - [x] ~~Прокомментировать 5 постов в нише~~ — сделано вчера в рамках warming раунда
 - [x] ~~+10 connection-запросов~~ — лимит invites на месяц исчерпан вчера (10/10). Окно возобновления 03.05
-- [ ] Переезд трекинга с Notion на файлы в `/Users/kirill/MyApps/Plan` + GitHub private repo → Working Copy для iOS (решено 08.04)
+- [x] Переезд трекинга с Notion на файлы в `/Users/kirill/MyApps/Plan` + GitHub private repo → Working Copy для iOS
+- [x] Полный аудит и перевод на английский всех 12 постов в `LINKEDIN_CONTENT_KIT.md` (v2)
+- [+] Extra (pull-forward из чт): зафиксирована SaaS идея №1 в `saas_idea_1.md`. Tier 1 wedge = Lingo (греческий для русскоязычных экспатов на Кипре, €12/мес). Код уже есть в `~/Documents/greek-app`, сегодня сформулирована стратегия, ICP, pricing, 5 discovery вопросов, hard kill criterion на 30.06
 
-**Четверг 09.04 — SaaS + клиенты**
-- [ ] Зафиксировать SaaS-идею №1 (problem · ICP · pricing hypothesis)
-- [ ] Landing-черновик (одна страница)
+**Четверг 09.04 — SaaS + клиенты + outreach**
+- [x] ~~Зафиксировать SaaS-идею №1~~ — сделано вчера вечером, `saas_idea_1.md`
+- [ ] Landing-черновик (одна страница) — hero / problem / solution / CTA / waitlist form, домен-решение (lingo.app vs greek-cy.com)
+- [ ] 30 минут ресёрча: Stripe в Кипре для EU VAT vs LemonSqueezy (R3 в `saas_idea_1.md`)
+- [ ] Поиск 3 целевых Telegram-чатов для discovery (Лимассол / Пафос / Никосия)
+- [ ] **Warm DMs** день-2 после accept — 8 принятых за 24ч из 10 cold connects. Шаблоны из `outreach_pitch.md` секция 4.
+- [ ] **CCA-F неделя 2 старт:** Building Applications with the Claude API, 2 часа из 8 (план в `cert_cca_f.md`)
 
 **Пятница 10.04 — LinkedIn + итоги недели**
 - [ ] Опубликовать пост #2 (Problem→Solution)

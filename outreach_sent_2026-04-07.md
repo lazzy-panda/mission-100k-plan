@@ -3,6 +3,27 @@
 Cold connection requests (no note) via LinkedIn / Playwright MCP.
 Personalized note slots (2/month) NOT used — saved for May.
 
+## Update 2026-04-08, ~15:30 Cyprus time (T+24h)
+
+**Accept rate: 8/10 (80%)** — значительно выше baseline 25% для cold LinkedIn. Возможные причины: Cyprus-focused targeting, профиль обновлён под Fractional CTO накануне отправки, 3 из 10 шли с персонализированными нотами (Theodosis, Akshit, Cristian).
+
+| # | Имя | Статус (T+24h) |
+|---|-----|----------------|
+| 1 | Akshit Sharma | ✅ accepted |
+| 2 | Cristian Pogan | ✅ accepted |
+| 3 | Dr. Teo Pham | ✅ accepted |
+| 4 | Tal Bar Cohen | ✅ accepted |
+| 5 | Andrei Sasinovich | ✅ accepted |
+| 6 | Nate Brady | ✅ accepted |
+| 7 | Jonatan Ary | ✅ accepted |
+| 8 | Robert Wallin | ✅ accepted |
+| 9 | Rami Hersonsky | ⏳ pending |
+| 10 | Theodosis Theodosiou | ⏳ pending |
+
+**Next step (день 2-3, т.е. 09-10.04):** отправить тёплый DM без оффера каждому из 8 accepted. По шаблону из `outreach_pitch.md` секция 4 «День 2-3». Формат: короткий реф на конкретный пост / проект + параллельный опыт + «спасибо, что делишься». БЕЗ оффера.
+
+**Правило (важно):** сегодня (день 0 accept) НИЧЕГО не шлём. Это spam-сигнал. Ждём минимум 48 часов.
+
 ## Sent — Pending (10/10)
 
 | # | Имя | Профиль | Зачем |

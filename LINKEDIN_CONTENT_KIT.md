@@ -1,79 +1,73 @@
-# LinkedIn Content Kit — 12 постов × 4 недели
+# LinkedIn Content Kit — 12 posts × 4 weeks (v2, audited 08.04.2026)
 
-> Старт публикаций: **среда 08.04.2026** (день 7 плана).
-> Темп: **3 поста в неделю** — Ср / Пт / Вс.
-> Форматы: Opinion · TIL · Problem→Solution · Case · Build-in-public.
-> Язык: русский. Нужна английская версия — скажи, перепишу.
-> Позиционирование: Fractional CTO + Solo Founder + Claude Code agentic runtime + stealth EdTech.
+> **Audit log (08.04.2026):** full rewrite from Russian v1 to English v2. Applied `feedback_human_writing.md` rules: stripped em dashes, arrows, AI vocab, native idioms, X-not-Y patterns, hook→bullets→wrap→question structure, and closing CTAs. Rewritten in non-native simple voice (Russian engineer typing English, not press release).
+>
+> **Language switch:** RU → EN. Reason: LinkedIn profile is in English, outreach targets are international (Cyprus, IL, RO, US, DE, IN), Mission $100K ICP is international founders. RU would reach only a narrow segment.
+>
+> **Post 1 replaced** with "Today I dropped Notion" — topical, live on 08.04.2026, better hook than the original "console replaces apps" angle.
+>
+> **Schedule:** 3 posts per week on Wed / Fri / Sun starting 08.04.2026.
+>
+> **Positioning:** Fractional CTO + solo founder + Claude Code agentic runtime + stealth EdTech.
 
 ---
 
-## 🗓 Неделя 1 — Хук и манифест (08.04 – 12.04)
+## 🗓 Week 1 — Hook and manifesto (08.04 – 12.04)
 
-### Пост 1 · Ср 08.04 · [Opinion] Как консоль Клода заменяет все приложения
+### Post 1 · Wed 08.04 · [Build-in-public] Today I dropped Notion
 
 ```
-За последний месяц я перестал открывать семь приложений.
+Today I dropped Notion.
 
-Notion. Obsidian. Postman. Отдельный markdown-редактор. Половину Raycast-расширений. Даже Playwright-скрипты в IDE.
+A week ago I put my 365-day plan into it. 365 database rows, a dashboard, checkboxes, integration, API token. Set up the way normal people do it.
 
-Всё это — теперь команды в консоли Claude Code.
+Seven days later, days marked done: 0 out of 365.
 
-— «отметь день 5 выполненным в Notion» → идёт в API, возвращается галочка
-— «сходи в базу и покажи последние 10 заказов» → читает Postgres, печатает таблицу
-— «обнови мой LinkedIn-профиль» → Playwright автоматизация в реальном времени
-— «проверь PR 342 и накидай ревью» → git diff + структурный анализ
+Not because nothing got done. LinkedIn profile fully rebuilt, 10 cold connects sent, 5 warming comments under target posts, pitch and DM templates written. Opening Notion to mark a day done is just an extra step I don't do.
 
-Я не проповедую AI-хайп. Я заметил, что граница между «интерфейсом» и «намерением» схлопнулась.
+Now the source of truth is one file in the repo. PLAN.md. Claude Code reads it, writes it, updates the status during our conversation. I work, the status gets written in parallel, no separate ritual.
 
-Приложение — это способ перевести мысль в действие через кнопки.
-Консоль Claude — способ перевести мысль в действие через предложение на русском.
+For phone access I use a GitHub private repo and Working Copy on iOS. 90KB of markdown, rendered natively.
 
-Второй путь в 10 раз быстрее для всего, что я делаю ежедневно.
-
-Через 12 месяцев мой Dock будет состоять из двух иконок: браузер и терминал. Остальное съест agentic runtime.
-
-Кто-то уже идёт этим путём? Какие приложения вы выбросили первыми?
+A tracker that lives outside your work always loses to a tool built into the work itself.
 ```
 
 ---
 
-### Пост 2 · Пт 10.04 · [Opinion] Киберпсихоз — это не фантастика, это 2026-й
+### Post 2 · Fri 10.04 · [Opinion] Cyberpsychosis is not science fiction, this is 2026
 
 ```
-Киберпсихоз — термин из Cyberpunk 2077. Когда имплантов становится слишком много и ты перестаёшь понимать, где заканчиваешься ты и начинается машина.
+Cyberpunk 2077 has a term: cyberpsychosis. When you stack too many implants and stop knowing where you end and the machine starts.
 
-В 2026-м это не фантастика. Это состояние инженера, у которого 12 агентов, 40 MCP-серверов и три параллельных Claude-сессии.
+In 2026 this is not science fiction. This is the state of an engineer running 12 agents, 40 MCP servers, and three parallel Claude sessions.
 
-Симптомы:
-— ты перестаёшь помнить, что делал руками, а что делегировал
-— decision log становится единственным способом понять, что ты вообще думаешь
-— в 3 ночи просыпаешься и проверяешь, не съел ли агент твой main branch
-— формулируешь мысли сразу под промпт, а не под собственную голову
+Symptoms.
+You forget what you did by hand and what you delegated.
+Your decision log is the only way to know what you actually thought.
+You wake up at 3am to check if an agent broke your main branch.
+You phrase thoughts as prompts before you finish thinking them.
 
-У меня есть гипотеза: киберпсихоз лечится не отказом от инструментов, а архитектурой.
+My theory: architecture fixes this. Not fewer tools. Architecture.
 
-Нужна чёткая граница: что делают агенты, что делаешь ты, и где между вами — SOP с версионированием. Decision log, который ты не можешь обойти. Память, которую ты не можешь подделать.
+You need a clear line between what agents do, what you do, and an SOP with versions in between. A decision log you can't skip. A memory you can't fake.
 
-Без этого ты не оператор AI-стека. Ты его юзер. А юзер всегда проигрывает своему интерфейсу.
+Without that, you slip from operator to user. And the user always loses to the interface.
 
-Сейчас строю внутреннюю operating-систему для собственного agentic runtime именно потому, что не хочу стать персонажем, которого собственная тулза опишет лучше него самого.
-
-Как у вас с границей?
+I'm building an internal operating system for my own agentic runtime, because I don't want a tool that understands me better than I understand myself.
 ```
 
 ---
 
-### Пост 3 · Вс 12.04 · [TIL] Трюк setNativeValue для React-форм
+### Post 3 · Sun 12.04 · [TIL] setNativeValue for React forms in Playwright
 
 ```
-TIL про автоматизацию React-форм через Playwright.
+TIL about automating React forms with Playwright.
 
-На этой неделе апдейтил свой LinkedIn-профиль полностью скриптом. Все input'ы — контролируемые React-компоненты.
+This week I updated my full LinkedIn profile with a script. Every input is a controlled React component.
 
-Проблема: обычный `element.value = 'text'` не триггерит React state. Компонент не видит изменений, сохранение отправляет пустые поля.
+The problem: plain element.value = 'text' doesn't trigger React state. The component doesn't see the change, and save sends empty fields.
 
-Решение:
+The fix:
 
 const setter = Object.getOwnPropertyDescriptor(
   Object.getPrototypeOf(el), 'value'
@@ -81,300 +75,297 @@ const setter = Object.getOwnPropertyDescriptor(
 setter.call(el, 'new value');
 el.dispatchEvent(new Event('input', { bubbles: true }));
 
-Этот трюк берёт нативный DOM-сеттер, обходит React-обёртку, вручную диспатчит input-событие. React подхватывает как настоящее изменение.
+This grabs the native DOM setter, bypasses the React wrapper, and dispatches the input event by hand. React accepts it as a real change.
 
-Чекбоксы — отдельная история: нужен не element.click(), а клик через Playwright role-селектор, иначе React глотает событие.
+Checkboxes work differently. element.click() gets eaten by React. You have to click through the Playwright role selector.
 
-Итог: весь мой LinkedIn (headline, about, 3 позиции, 8 скиллов) обновился за 20 минут без ручного копипаста.
+Result: my full LinkedIn (headline, about, 3 experience cards, 8 skills) updated in 20 minutes without manual copy-paste.
 
-Playwright + Claude Code + один evaluate-хелпер = конец эпохе «зайди в браузер и заполни руками».
+Playwright plus Claude Code plus one evaluate helper means I no longer open the browser to fill forms by hand.
 ```
 
 ---
 
-## 🗓 Неделя 2 — Система и процесс (13.04 – 19.04)
+## 🗓 Week 2 — System and process (13.04 – 19.04)
 
-### Пост 4 · Ср 15.04 · [Problem→Solution] Как не терять контекст между Claude-сессиями
-
-```
-Проблема: каждую сессию с Claude Code начинать с нуля — объяснять, кто ты, что делаешь, на чём остановился вчера.
-
-Выматывает. 10-15 минут на re-prompting. Ошибки из-за неполного контекста.
-
-Моё решение: trio из трёх файлов в корне проекта.
-
-1. MEMORY.md — персистентная память: профиль, цели, привычки, принципы. Подгружается автоматически в каждую сессию.
-
-2. PLAN.md — single source of truth по текущему состоянию: что сделано, что сейчас, что следующее. Обновляется в конце каждой сессии.
-
-3. decision_log/ — папка с dated-файлами: каждое архитектурное решение = один файл с контекстом «почему именно так».
-
-Результат: новый Claude входит в курс дела за 30 секунд. Я пишу «давай продолжим» — и мы продолжаем с того места, где вчера остановились.
-
-Главное тут — decision log. Через месяц ты сам не помнишь, почему выбрал Next.js App Router вместо Pages. Лог помнит. И будущий-ты благодарен прошлому-тебе.
-
-Это не оверинжиниринг. Это то, что отличает студию от хобби.
-```
-
----
-
-### Пост 5 · Пт 17.04 · [Build-in-public] Day 5/365
+### Post 4 · Wed 15.04 · [Problem→Solution] Keeping context between Claude sessions
 
 ```
-Day 5 of 365.
+The problem: every Claude Code session starts from zero. You explain who you are, what you do, where you stopped yesterday. Every time.
 
-6 месяцев я строил под контрактом. Сейчас — своя студия из одного человека плюс armada из AI-агентов.
+10-15 minutes lost to re-prompting. Errors from incomplete context.
 
-Трек 1: stealth EdTech-продукт. Customer discovery, MVP scope, первая волна интервью на следующей неделе.
+My fix: three files at the repo root.
 
-Трек 2: внутренний Claude Code agentic runtime. 12 SOP, 5 специализированных агентов, decision log на каждое архитектурное решение.
+MEMORY.md. Persistent memory about profile, goals, habits, principles. Auto-loaded into every session.
 
-Параллельно:
-— LinkedIn-профиль полностью переработан (эта неделя)
-— 365-дневная программа обучения — 28 книг, ~12 000 страниц. Старт в эту субботу с Тиля
-— pipeline из fractional CTO / advisory возможностей в работе
+PLAN.md. Single source of truth for current state. What's done, what's in progress, what's next. Updated at the end of every session.
 
-Цель на 365 дней: $100K/мес.
+decision_log folder. Dated files, one per architectural choice. Each file answers "why exactly this way".
 
-Я не верю в «vibe-work». Я верю в ежедневный чек-ин с собственным decision log.
+Result: a new Claude catches up in 30 seconds. I write "let's continue" and we continue from yesterday's stop point.
 
-Раз в неделю буду постить сюда: что продвинулось, что сломалось, что выучил.
+The key piece is decision_log. In a month you won't remember why you picked Next.js App Router over Pages. The log remembers. Your future self thanks your past self.
 
-День 5/365. Поехали.
+Three files. Thirty seconds of context. Every session.
 ```
 
 ---
 
-### Пост 6 · Вс 19.04 · [Opinion] Я перестал говорить "AI assistant". Теперь — "agentic runtime"
+### Post 5 · Fri 17.04 · [Build-in-public] Day 16 of 365
 
 ```
-«AI assistant» — это фрейм, который я выбросил из словаря.
+Day 16 of 365.
 
-Ассистент — нечто, что ждёт задачи. С чем «советуешься». Что уточняет перед каждым шагом.
+For six months I was building under contract. Now I run a studio of one person plus a small group of AI agents.
 
-Это не то, что мне нужно.
+Track 1: stealth EdTech product. Customer discovery, MVP scope, first round of interviews this week.
 
-Мне нужен runtime — среда, которая выполняется сама. Запускается по SOP. Принимает решения по decision log. Пишет в память. Эскалирует только блокеры.
+Track 2: internal Claude Code agentic runtime. 12 SOPs, 5 specialized agents, decision log on every architectural call.
 
-Разница практическая.
+In parallel. LinkedIn profile fully rebuilt. 365-day learning program of 28 books and around 12,000 pages, already in week one with Thiel. Pipeline of Fractional CTO and advisory conversations in motion.
 
-Assistant (старая модель): «Хочешь, я обновлю LinkedIn?» → я: «да» → он уточняет каждое поле.
+Target for 365 days: $100K per month.
 
-Runtime (моя сейчас): читает plan.md, видит задачу «залить профиль», открывает Playwright, делает, пишет результат, отмечает выполненным. Я просыпаюсь — готово.
+I don't believe in "vibe work". I believe in a daily check-in with my own decision log.
 
-Переименование — не косметика. Это сдвиг операционной модели. От «человек + инструмент» → к «оператор + автоматизированная среда».
+Once a week I'll post here: what moved, what broke, what I learned.
 
-Если вы всё ещё «пользуетесь AI» — вы не там, где могли бы быть. Стройте среду, а не отношения с чатботом.
-```
-
----
-
-## 🗓 Неделя 3 — Позиционирование и рынок (20.04 – 26.04)
-
-### Пост 7 · Ср 22.04 · [Opinion] Fractional CTO — единственный честный путь для senior-инженера в 2026
-
-```
-Несколько горячих мыслей про карьеру senior-инженеров в 2026.
-
-Бигтех — дорога к замедлению. Performance review, политика, перегруженные календари, архитектурные обзоры вчерашних решений.
-
-Стартап founding engineer — лотерея. Высокий апсайд, 70% опционов обнулятся.
-
-Консалтинг — выгоревшие воины. 60 часов в неделю, чужие сроки, чужие приоритеты.
-
-Свой SaaS — 18-24 месяца без выручки, ты один против рынка.
-
-Fractional CTO — единственный путь, где ты:
-— работаешь 2-3 дня в неделю на клиента, остальное — на себя
-— берёшь 3-4 компании одновременно, диверсифицируя риск
-— делаешь архитектурные решения, а не тикеты
-— берёшь $15-30K/мес с каждого клиента
-— оставляешь пространство для собственного продукта
-
-Это не для всех. Нужна репутация, нетворк и выносливость первых 6 месяцев без пайплайна.
-
-Но если вы senior с 10+ лет опыта и вам надоело носить badge — это единственная честная игра на рынке.
-
-Я выбрал её в октябре 2025. Лучшее карьерное решение за последние 10 лет.
+Day 16 of 365. Going.
 ```
 
 ---
 
-### Пост 8 · Пт 24.04 · [TIL] MCP-серверы — это новый npm
+### Post 6 · Sun 19.04 · [Opinion] I stopped saying "AI assistant". Now it's "agentic runtime"
 
 ```
-TIL: MCP-серверы — это новый npm.
+"AI assistant" is a frame I dropped from my vocabulary.
 
-Model Context Protocol — стандарт от Anthropic для подключения внешних инструментов к LLM-агентам. Файлы, API, базы, браузеры — всё как tools, доступные Claude напрямую.
+An assistant waits for tasks. You consult with it. It asks permission before every step.
 
-Что поменялось в моём стеке за месяц:
+That's not what I need.
 
-— playwright-mcp → браузерная автоматизация без единой строчки Selenium
-— notion-mcp → вся моя work-state в Notion управляется из консоли
-— filesystem-mcp → агент читает/пишет файлы в чётко ограниченной sandbox
-— git-mcp → commits, diffs, branches — прямо из промпта
+I need a runtime. An environment that runs itself. Starts by SOP. Makes decisions by decision log. Writes to memory. Escalates only blockers.
 
-Раньше каждый интеграционный слой я писал руками: OAuth, токены, rate-limits, error handling. Сейчас — `claude mcp add <server-name>` и поехали.
+The difference is practical.
 
-Это момент, когда экосистема перестаёт быть про «попробовать AI» и становится про «построить операционную среду на AI».
+Assistant mode (old): "do you want me to update LinkedIn?" "yes". It asks about every field.
 
-Если у вас не настроено хотя бы 3 MCP-сервера — вы читаете этот пост из 2024 года.
+Runtime mode (mine now): it reads plan.md, sees the task "rebuild profile", opens Playwright, does it, writes the result, marks it done. I wake up. It's ready.
 
-Что в вашем стеке?
-```
+The rename is the point. It marks a shift from "person plus tool" to "operator plus automated environment".
 
----
-
-### Пост 9 · Вс 26.04 · [Build-in-public] 28 книг на год
-
-```
-На год вперёд у меня 28 книг и ~12 000 страниц.
-
-Старт — эта суббота. Финиш — апрель 2027.
-
-Список (частично):
-— Тиль «Zero to One» — первая книга, первая неделя
-— Далио «Принципы»
-— Айзексон: Джобс, Франклин, Эйнштейн
-— Кроули «System Architecture» (MIT)
-— Фейнман — все три тома лекций
-— Ландау-Лифшиц — Механика, Теория поля
-— Гудфеллоу «Deep Learning»
-— Саттон «Rocket Propulsion Elements»
-
-Почему такой странный микс? Потому что узкий специалист — это тупик.
-
-Стратегия + биографии фаундеров → учат принятию решений под неопределённостью.
-Физика и математика → учат думать от первых принципов.
-Инжиниринг систем → учат работать с комплексностью.
-Фантастика → учит масштабу мышления (Хайнлайн, Герберт, Азимов).
-
-~33 страницы в день. Один час утром.
-
-Цель не «прочитать». Цель — переписать собственную операционную модель за 365 дней.
-
-Держу открытый decision log по каждой книге. Поделюсь заметками по Тилю через неделю — если кому интересно.
+If you still "use AI", you're behind. The job now is to build the environment. The chatbot relationship is the old model.
 ```
 
 ---
 
-## 🗓 Неделя 4 — Практика и принципы (27.04 – 03.05)
+## 🗓 Week 3 — Positioning and market (20.04 – 26.04)
 
-### Пост 10 · Ср 29.04 · [Problem→Solution] Design system для команды из одного человека и пяти агентов
-
-```
-Проблема: design system для команды из одного человека и пяти AI-агентов.
-
-Классические DS (Material, Chakra, shadcn) построены под команды. Документация, Storybook, contribution guidelines, token pipelines. Оверкилл для соло-фаундера.
-
-Но без системы каждый агент, трогающий UI, изобретает свой spacing, свою палитру, свой button variant. Хаос масштабируется мгновенно.
-
-Моё решение: single-file design system.
-
-`design-system.md` в корне проекта. 400 строк. Содержит:
-— 8 цветовых токенов (не 80)
-— 4 spacing scale (не Fibonacci-лестницу)
-— 3 typography scale
-— 5 ключевых компонентов с примерами usage
-— ссылки на Tailwind конфиг
-
-Этот файл подгружается в контекст каждого агента, который пишет UI. Плюс lint-правило: «если вводишь новый цвет — спроси оператора».
-
-Результат: два месяца работы, ни одного drift'а. UI выглядит как сделанный одной рукой — потому что документация и есть единственная рука.
-
-DS масштабируется не количеством компонентов, а количеством ограничений, которые вы согласились принять.
-```
-
----
-
-### Пост 11 · Пт 01.05 · [Case] Customer discovery через Claude-агента — что сломалось
+### Post 7 · Wed 22.04 · [Opinion] Fractional CTO is the only honest path for a senior engineer in 2026
 
 ```
-Эксперимент: запустил customer discovery через Claude Code агента.
+Hot takes on senior engineer careers in 2026.
 
-Задача: провести 20 интервью с потенциальными пользователями stealth EdTech продукта, вытащить паттерны.
+Big Tech is the road to slowing down. Performance reviews, office politics, calendars full of meetings, architecture reviews of last year's decisions.
 
-Что сработало:
-— агент генерил адаптивные follow-up вопросы в реальном времени, не хуже меня
-— транскрипции + тематический анализ — в 30 раз быстрее ручной работы
-— вытащил 4 инсайта, которые я сам пропустил в первых трёх интервью
+Startup founding engineer is a lottery. High upside, 70% of options go to zero.
 
-Что сломалось:
-— агент не чувствует момент, когда человек колеблется. Не умеет «молчать и ждать»
-— на эмоциональных ответах пытался «решить проблему», а не углубить её
-— упустил два сильных сигнала: они были не в тексте, а в интонации
+Consulting is burnout. 60-hour weeks, other people's deadlines, other people's priorities.
 
-Вывод: discovery — это гибрид. Агент ведёт структуру и анализ. Ты ведёшь эмпатию и тишину.
+Your own SaaS is 18 to 24 months without revenue. You against the market, alone.
 
-Не отдавайте живой разговор машине. Но и не ведите его без машины на вторых рельсах.
+Fractional CTO is the one path where you:
+work 2-3 days a week per client, the rest is yours
+take 3-4 companies at the same time and diversify risk
+make architecture calls instead of tickets
+charge 15 to 30K a month per client
+leave real space for your own product
 
-Сейчас строю SOP «hybrid interview»: я говорю, агент слушает параллельно, после разговора делаем debrief по транскрипту.
+This isn't for everyone. You need reputation, network, and 6 months of patience before the first pipeline lands.
 
-Поделюсь результатами через две недели.
+But if you're a senior with 10 plus years and you're tired of wearing a badge, this is the only honest game on the market.
+
+I made the switch in October 2025. Best career call in the last ten years.
 ```
 
 ---
 
-### Пост 12 · Вс 03.05 · [Opinion] Ваш roadmap — трата времени. Decision log — всё
+### Post 8 · Fri 24.04 · [TIL] MCP servers are the new npm
 
 ```
-Непопулярное мнение: дорожная карта бесполезна.
+TIL: MCP servers are the new npm.
 
-Roadmap — фикция. Делает вид, что будущее предсказуемо. Создаёт ложную уверенность у стейкхолдеров. Устаревает через две недели после публикации.
+Model Context Protocol is Anthropic's standard for plugging external tools into LLM agents. Files, APIs, databases, browsers. All exposed to Claude as tools.
 
-Что реально работает: decision log.
+What changed in my stack in one month:
 
-Каждое значимое решение → один markdown-файл с датой, контекстом, вариантами, выбором и причиной. Ничего больше.
+playwright-mcp for browser automation without one line of Selenium.
+filesystem-mcp for file read and write in a bounded sandbox.
+git-mcp for commits, diffs, branches straight from the prompt.
+postgres-mcp for running SQL on my local dev DB from Claude.
 
-Через месяц decision log показывает:
-— куда вы реально движетесь (а не куда обещали)
-— какие гипотезы подтверждались, а какие нет
-— где прошлый-вы ошибся и как будущий-вы не повторит
+Before, I wrote every integration layer by hand: OAuth, tokens, rate limits, error handling. Now it's `claude mcp add <server-name>` and done.
 
-Через 6 месяцев decision log — единственный документ, из которого можно восстановить стратегию.
+This is the moment the ecosystem stops being about "trying AI" and starts being about "building an operating environment on top of AI".
 
-Roadmap — это то, что вы показываете инвесторам.
-Decision log — это то, почему инвесторы захотят повторно вложиться.
-
-Свой лог веду с первого дня студии. 47 файлов за 6 месяцев. Каждый раз, когда агент или партнёр спрашивает «почему так?» — я не отвечаю, скидываю ссылку.
-
-Ваш последний roadmap-апдейт когда был? А decision log вы ведёте?
+If you don't have at least three MCP servers running, you're reading this post from 2024.
 ```
 
 ---
 
-## 📊 Календарь публикаций
+### Post 9 · Sun 26.04 · [Build-in-public] 28 books for the year
 
-| День плана | Дата | Пост | Категория |
-|------------|------|------|-----------|
-| 7 | Ср 08.04 | #1 Консоль Клода | Opinion |
-| 9 | Пт 10.04 | #2 Киберпсихоз | Opinion |
-| 11 | Вс 12.04 | #3 setNativeValue | TIL |
-| 14 | Ср 15.04 | #4 Контекст между сессиями | Problem→Solution |
-| 16 | Пт 17.04 | #5 Day 5/365 | Build-in-public |
-| 18 | Вс 19.04 | #6 Agentic runtime | Opinion |
-| 21 | Ср 22.04 | #7 Fractional CTO | Opinion |
-| 23 | Пт 24.04 | #8 MCP = новый npm | TIL |
-| 25 | Вс 26.04 | #9 28 книг на год | Build-in-public |
-| 28 | Ср 29.04 | #10 DS для соло + агентов | Problem→Solution |
-| 30 | Пт 01.05 | #11 Discovery через агента | Case |
-| 32 | Вс 03.05 | #12 Decision log > roadmap | Opinion |
+```
+I have 28 books queued for the year. Around 12,000 pages.
+
+Start: Saturday 11.04. Finish: April 2027.
+
+Partial list:
+Thiel, Zero to One. First book, first week.
+Dalio, Principles.
+Isaacson: Jobs, Franklin, Einstein.
+Crawley, System Architecture (MIT).
+Feynman, all three volumes of the Lectures.
+Landau-Lifshitz, Mechanics and Theory of Fields.
+Goodfellow, Deep Learning.
+Sutton, Rocket Propulsion Elements.
+
+Why such a weird mix? Because narrow specialists have a ceiling.
+
+Strategy and founder biographies teach decisions under uncertainty.
+Physics and math teach thinking from first principles.
+Systems engineering teaches working with complexity.
+Science fiction teaches scale (Heinlein, Herbert, Asimov).
+
+Around 33 pages a day. One hour in the morning.
+
+The real goal isn't to finish the list. It's to rewrite my own operating model in 365 days.
+
+I keep an open decision log per book. I'll share notes on Thiel in about a week.
+```
 
 ---
 
-## 🎯 Принципы, по которым написаны посты
+## 🗓 Week 4 — Practice and principles (27.04 – 03.05)
 
-1. **Первые 2 строки — хук.** LinkedIn обрезает пост после ~200 символов и показывает «see more». До обрыва должно быть интересно.
-2. **Конкретика > абстракция.** Цифры, имена, команды, snippets. «7 приложений», «47 файлов», «12 агентов».
-3. **Одна мысль на пост.** Не пытайся сказать всё сразу. Лучше 12 острых мыслей, чем 1 размытый манифест.
-4. **Вопрос в конце.** Провоцирует комментарии → алгоритм толкает пост в ленту.
-5. **Без эмодзи в теле.** Только тире-буллеты. Эмодзи обесценивают тон «senior architect». Исключение: 🎯 в heading-строке, если очень хочется.
-6. **Повторы категорий:** не ставь два Opinion подряд. Чередуй тон.
+### Post 10 · Wed 29.04 · [Problem→Solution] A design system for a team of one person and five agents
+
+```
+The problem: building a design system for a team of one person and five AI agents.
+
+Classic DS like Material, Chakra, or shadcn assume a team. Docs, Storybook, contribution guidelines, token pipelines. Overkill for a solo founder.
+
+But without a system, every agent touching UI invents its own spacing, palette, and button variant. Chaos scales in a day.
+
+My fix: a single-file design system.
+
+design-system.md in the project root. 400 lines. It contains:
+8 color tokens, not 80.
+4 spacing values, not a Fibonacci ladder.
+3 typography scales.
+5 key components with usage examples.
+Links to the Tailwind config.
+
+This file loads into the context of any agent writing UI. Plus a lint rule: "if you introduce a new color, ask the operator".
+
+Result: two months of work, zero drift. The UI looks like one person made it because the docs are the one person.
+
+A design system scales by the number of constraints you accept, not by the number of components.
+```
 
 ---
 
-## 🔧 Что делать дальше
+### Post 11 · Fri 01.05 · [Case] Customer discovery through a Claude agent. What worked, what broke
 
-- [ ] Прочитай все 12, отметь те, что не нравятся — перепишу.
-- [ ] Перенеси в LinkedIn Scheduler (или публикуй вручную по расписанию).
-- [ ] После первых 3 постов (неделя 1) — пересчитаем по engagement и скорректируем тон недель 2–4.
+```
+Experiment: I ran customer discovery through a Claude Code agent.
+
+Task: run 20 interviews with potential users of my stealth EdTech product, extract patterns.
+
+What worked:
+the agent generated adaptive follow-up questions in real time, as good as me
+transcripts plus thematic analysis, 30 times faster than manual
+it caught 4 insights I missed in my first three interviews
+
+What broke:
+the agent can't feel when a person is hesitating. It doesn't know how to stay silent and wait
+on emotional answers it tried to "solve the problem" instead of going deeper
+it missed two strong signals that weren't in the words, only in the tone
+
+Lesson: discovery is a hybrid. The agent runs structure and analysis. You run empathy and silence.
+
+Don't hand the live conversation to the machine. And don't run the conversation without the machine on a parallel rail.
+
+I'm now building a "hybrid interview" SOP. I talk, the agent listens in parallel, after the call we debrief from the transcript.
+
+Results in about two weeks.
+```
+
+---
+
+### Post 12 · Sun 03.05 · [Opinion] Your roadmap is a waste. Decision log is everything
+
+```
+Unpopular opinion: roadmaps are useless.
+
+A roadmap is fiction. It pretends the future is predictable. It builds false confidence in stakeholders. It's outdated two weeks after publishing.
+
+What actually works: the decision log.
+
+Every meaningful decision becomes one markdown file with date, context, options, choice, and reason. Nothing more.
+
+In a month, the decision log shows:
+where you are actually going, not where you promised to go
+which hypotheses held and which didn't
+where past-you was wrong and how future-you won't repeat it
+
+In six months, the decision log is the only document you can reconstruct strategy from.
+
+A roadmap is what you show investors. The decision log is why they write the second check.
+
+I've been keeping mine since day one of the studio. 47 files in 6 months. Every time an agent or a partner asks "why like this", I don't answer. I send the link.
+
+When was your last roadmap update?
+```
+
+---
+
+## 📊 Publication calendar
+
+| Plan day | Date | Post | Category |
+|----------|------|------|----------|
+| 7 | Wed 08.04 | #1 Dropped Notion | Build-in-public |
+| 9 | Fri 10.04 | #2 Cyberpsychosis | Opinion |
+| 11 | Sun 12.04 | #3 setNativeValue | TIL |
+| 14 | Wed 15.04 | #4 Context between sessions | Problem→Solution |
+| 16 | Fri 17.04 | #5 Day 16 of 365 | Build-in-public |
+| 18 | Sun 19.04 | #6 Agentic runtime | Opinion |
+| 21 | Wed 22.04 | #7 Fractional CTO path | Opinion |
+| 23 | Fri 24.04 | #8 MCP is new npm | TIL |
+| 25 | Sun 26.04 | #9 28 books for the year | Build-in-public |
+| 28 | Wed 29.04 | #10 DS for solo + agents | Problem→Solution |
+| 30 | Fri 01.05 | #11 Discovery through agent | Case |
+| 32 | Sun 03.05 | #12 Decision log > roadmap | Opinion |
+
+---
+
+## 🎯 Writing principles (v2 — integrated with `feedback_human_writing.md`)
+
+1. **First 2 lines are the hook.** LinkedIn cuts the post around 200 characters with "see more". Before the cut it must be interesting. The first sentence should make the reader stop scrolling.
+2. **Specifics over abstraction.** Numbers, names, commands, snippets. "12 agents", "47 files", "0 out of 365". Vague = AI smell.
+3. **One idea per post.** Don't try to say everything. 12 sharp thoughts beat 1 vague manifesto.
+4. **No closing CTAs.** No "let me know your thoughts", "curious to hear", "what do you think". A real short question is OK only when it's genuinely open, not a template.
+5. **No emojis in body.** Only line-break bullets. Emojis cheapen the "senior architect" tone. The only exception is the heading emoji in weekly section headers of this file.
+6. **Rotate categories.** Never two Opinion posts in a row. Alternate tone.
+7. **All hard bans from `feedback_human_writing.md` apply:** em dashes, arrows, AI vocab (delve/leverage/robust/journey/landscape/ecosystem), native idioms (pulled the trigger, pick up the torch, from scratch, bandwidth, deep dive), "not X, it's Y" structures, hook→bullets→wrap→question pattern, stacked parallelism.
+8. **Non-native voice.** Simple verbs, plain English, no clever wordplay. A Russian engineer who learned English from docs and Stack Overflow would type this.
+
+---
+
+## 🔧 Next actions
+
+- [x] Full audit and English rewrite of all 12 posts (08.04.2026)
+- [ ] Publish Post 1 today (Wed 08.04) via Playwright
+- [ ] Check engagement on Post 1 before Post 2 (Fri 10.04). If the tone is getting zero traction, tighten Posts 2-12 further.
+- [ ] After Week 1 (Sun 12.04), hold a retro and decide whether to keep the Week 2-4 lineup or reshuffle based on what performed.
