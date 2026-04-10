@@ -118,6 +118,14 @@ Kirill
 6. **Длина:** 3–5 строк максимум. LinkedIn режет длинные сообщения в превью.
 7. **Подпись:** просто имя. Никаких титулов, ссылок, эмодзи.
 
+> **TODO (после того как заработает `kirill@morozco.tech`):** заменить email-signature во всех исходящих gmail-коммуникациях. Один шаг в Gmail Settings → Signature:
+> ```
+> Kirill
+> kirill@morozco.tech
+> https://morozco.tech
+> ```
+> Credibility-бонус сразу поднимает reply-rate на холодных DMs и email follow-ups. До этого момента — никаких email-следов с gmail на холодные контакты.
+
 ---
 
 ## 4. Что делать после accept

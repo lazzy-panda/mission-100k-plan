@@ -169,7 +169,22 @@
 
 ### Срочно — окно $0 экзамена закрывается (первые 5000 партнёров)
 
-- [ ] **Шаг 1: Apply to Claude Partner Network.** Прямая ссылка регистрации: https://partnerportal.anthropic.com/s/partner-registration (landing: https://claude.com/partners). Вступление бесплатное для любой организации, нужен бизнес-email. Это единственный способ получить доступ к экзамену (certification exclusive to partner employees).
+**Блокер обнаружен 08.04 вечер:** Partner Network форма не принимает gmail/outlook/yahoo. Нужен business email на custom domain.
+
+**Решение:** купить личный домен `morozco.tech` + настроить Cloudflare Email Routing (free forever).
+
+- [x] **Шаг 0: Купить домен `morozco.tech`.** ✅ 09.04.2026 через Cloudflare Registrar.
+- [x] **Шаг 0.5: Настроить Cloudflare Email Routing.** ✅ 09.04.2026, `kirill@morozco.tech` → gmail.
+- [x] **Шаг 0.75: Deploy landing на `morozco.tech`.** ✅ 09.04.2026 — Cloudflare Pages (`morozco-tech` project), Three.js scene с tech-логотипами + 3D Morozco mark, CNAME @ / www → `morozco-tech.pages.dev` (proxied), SSL active. Исходник в `morozco-tech-landing/index.html`.
+- [x] **Шаг 1: Apply to Claude Partner Network.** ✅ Подана 09.04.2026 через https://partnerportal.anthropic.com/s/partner-registration. Статус на 10.04: "review in progress", ждём email с activation link. Email: `kirill@morozco.tech`.
+
+**Что писать в форме:**
+- Company name: `Kirill Morozov — Fractional CTO Services` (или финальный бренд, если решим иначе)
+- Business email: `kirill@morozco.tech`
+- Website: `https://morozco.tech` (с coming-soon страницей)
+- Country: `Cyprus`
+- Use case: Fractional CTO для founders building AI-native products on Claude Code. Own stealth EdTech product in development, bringing Claude to customers through architecture consulting + direct product implementation.
+
 - [ ] **Шаг 2: Request exam access** через https://anthropic.skilljar.com/claude-certified-architect-foundations-access-request — сделать сразу после approval партнёрства.
 
 ### Позже (неделя 5–6)

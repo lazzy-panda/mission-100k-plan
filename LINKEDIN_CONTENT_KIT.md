@@ -36,24 +36,27 @@ A tracker that lives outside your work always loses to a tool built into the wor
 
 ### Post 2 · Fri 10.04 · [Opinion] Cyberpsychosis is not science fiction, this is 2026
 
+**Image:** `assets/freepik_cinematic-cyberpunk-scene_2752149138.png` (engineer at desk with floating holographic terminal windows, cyan+amber lighting)
+
 ```
-Cyberpunk 2077 has a term: cyberpsychosis. When you stack too many implants and stop knowing where you end and the machine starts.
+Garry Tan said at SXSW last month he has "cyber psychosis." Sleeps 4 hours. Can't stop building with Claude Code. He joked a third of the CEOs he knows have it too.
 
-In 2026 this is not science fiction. This is the state of an engineer running 12 agents, 40 MCP servers, and three parallel Claude sessions.
+Not a CEO. Don't run YC. Smaller version of the same thing over here.
 
-Symptoms.
-You forget what you did by hand and what you delegated.
-Your decision log is the only way to know what you actually thought.
-You wake up at 3am to check if an agent broke your main branch.
-You phrase thoughts as prompts before you finish thinking them.
+12 agents. 40 MCP servers. Three parallel Claude sessions.
+3am wake-ups to check if one of them broke main.
+No memory of what was me and what was an agent.
+Thoughts come out as prompts before they finish forming.
 
-My theory: architecture fixes this. Not fewer tools. Architecture.
+Garry rebuilt a startup that took him $10M and 10 people over two years. Solo, in a few weeks, with his gstack. Everyone talks about the $10M. Nobody talks about the sleep.
 
-You need a clear line between what agents do, what you do, and an SOP with versions in between. A decision log you can't skip. A memory you can't fake.
+The fix isn't fewer tools. It's architecture.
 
-Without that, you slip from operator to user. And the user always loses to the interface.
+A clear line between what agents do, what you do, and a process with versions in between. A decision log you can't skip. A memory you can't fake.
 
-I'm building an internal operating system for my own agentic runtime, because I don't want a tool that understands me better than I understand myself.
+Without that you slip from operator to user. And the user always loses to the interface.
+
+So yes, I have it too. Building an internal OS for my own agentic runtime. I want to run the machine, not the other way around.
 ```
 
 ---

@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morozco — Fractional CTO</title>
+  <meta name="description" content="Fractional CTO for founders building AI products. Architecture, hiring, and hands-on engineering with Claude Code.">
+  <meta property="og:title" content="Morozco — Fractional CTO">
+  <meta property="og:description" content="Fractional CTO for founders building AI products. Architecture, hiring, and hands-on engineering with Claude Code.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://morozco.tech">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      /* palette inspired by the metallic Morozco logo */
+      --bg:      #05070b;
+      --bg-2:    #080b12;
+      --fg:      #dfe3ec;
+      --muted:   #5a6478;
+      --dim:     #2a3040;
+      --accent:  #8ab4d0;   /* steel cyan from the logo gradient */
+      --accent-2:#c9d9e8;   /* lighter steel */
+      --hot:     #7dd3fc;   /* live cyan for pulses */
+      --line:    #141823;
+      --display: "Orbitron", "Space Grotesk", system-ui, sans-serif;
+      --sans:    "Space Grotesk", system-ui, sans-serif;
+      --mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body { min-height: 100vh; overflow-x: hidden; }
+
+    /* layer order (bottom → top):
+       1  canvas#scene (three.js)
+       2  .scroll-spacer (invisible scroll area)
+       5  .vignette (cinematic edge fade)
+       10 .overlay (content text)
+       15 .hud, .header
+       20 .progress
+    */
+
+    canvas#scene {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: 1;
+    }
+
+    .scroll-spacer {
+      position: relative;
+      height: 500vh;
+      width: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      background:
+        radial-gradient(ellipse 80% 70% at center, transparent 30%, rgba(5,7,11,0.55) 70%, rgba(5,7,11,0.95) 100%),
+        linear-gradient(180deg, rgba(5,7,11,0.55) 0%, transparent 12%, transparent 88%, rgba(5,7,11,0.7) 100%);
+    }
+
+    /* ---------- header with logo mark ---------- */
+    .header {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 15;
+      pointer-events: none;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      pointer-events: auto;
+    }
+    .brand .name { margin-left: -22px; margin-top: -10px}
+    .brand .mark {
+      width: 90px;
+      height: 90px;
+      color: var(--fg);
+      filter: drop-shadow(0 0 12px rgba(138,180,208,0.3));
+    }
+    .brand .mark svg { width: 100%; height: 100%; fill: currentColor; }
+    .brand .name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      color: var(--fg);
+    }
+    .header .nav {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      gap: 20px;
+      pointer-events: auto;
+    }
+    .header .nav span::before { content: "// "; color: var(--dim); }
+
+    /* ---------- content overlay ---------- */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+    .overlay a { pointer-events: auto; }
+
+    .block {
+      position: absolute;
+      max-width: 620px;
+      width: calc(100% - 48px);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1);
+      will-change: opacity, transform;
+    }
+    .block.visible { opacity: 1; transform: translateY(0); }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent));
+    }
+    .eyebrow::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--hot);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--hot);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, #f4f7fd 0%, #8ab4d0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      color: var(--fg);
+      margin-bottom: 20px;
+    }
+    p { color: var(--fg); margin-bottom: 18px; font-weight: 300; }
+    p.muted { color: var(--muted); }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+    }
+    li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+    }
+    li:first-child { border-top: 1px solid var(--line); }
+    li .k {
+      color: var(--muted);
+      min-width: 110px;
+      flex-shrink: 0;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    li .v { color: var(--fg); font-family: var(--mono); font-size: 13px; }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim);
+      padding-bottom: 1px;
+      transition: border-color 200ms ease, color 200ms ease;
+    }
+    a:hover { border-bottom-color: var(--hot); color: var(--hot); }
+
+    /* ---------- progress + HUD ---------- */
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--hot));
+      width: 0%;
+      z-index: 20;
+      pointer-events: none;
+      box-shadow: 0 0 14px var(--hot);
+    }
+
+    .hud {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      z-index: 15;
+      pointer-events: none;
+    }
+    .hud .col { display: flex; flex-direction: column; gap: 6px; }
+    .hud .right { text-align: right; align-items: flex-end; }
+    .hud .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+    .hud .hot { color: var(--hot); }
+    .hud .hint { transition: opacity 400ms ease; color: var(--accent); }
+    .hud .hint.hide { opacity: 0; }
+    .hud .bracket::before { content: "["; color: var(--dim); margin-right: 4px; }
+    .hud .bracket::after  { content: "]"; color: var(--dim); margin-left: 4px; }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 720px) {
+      h1 { font-size: 28px; }
+      h2 { font-size: 20px; }
+      body { font-size: 14px; }
+      .hud { font-size: 9px; }
+      .header .nav { display: none; }
+      li .k { min-width: 80px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      canvas#scene, .vignette, .scroll-spacer, .progress { display: none !important; }
+      .overlay { position: static; min-height: 100vh; padding: 120px 24px 60px; }
+      .block {
+        position: static;
+        opacity: 1 !important;
+        transform: none !important;
+        margin: 40px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="scene"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="scroll-spacer" aria-hidden="true"></div>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- Header: inline Morozco logo mark (vectorized from the raster) -->
+  <header class="header">
+    <div class="brand">
+      <div class="mark" aria-label="Morozco">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,1024) scale(0.1,-0.1)">
+            <path d="M4780 7746 c-239 -43 -477 -137 -677 -269 -107 -71 -133 -94 -116 -105 6 -4 259 -248 563 -542 303 -294 556 -535 560 -535 9 0 186 168 710 674 151 146 310 299 352 340 l77 74 -44 34 c-208 159 -495 278 -815 338 -19 4 -134 9 -255 11 -198 3 -233 1 -355 -20z"/>
+            <path d="M3622 7024 c-371 -512 -444 -1192 -191 -1774 97 -222 229 -410 415 -590 l119 -115 3 843 c1 541 6 842 12 840 8 -2 456 -426 823 -777 l77 -74 0 285 0 285 -77 74 c-43 41 -206 198 -363 350 -369 357 -753 719 -762 719 -5 0 -29 -29 -56 -66z"/>
+            <path d="M6410 6967 c-69 -67 -269 -259 -445 -427 -176 -168 -390 -372 -476 -455 l-157 -150 5 -890 c3 -489 6 -891 7 -892 3 -3 167 28 245 48 155 38 377 135 517 224 298 191 550 480 685 788 37 84 102 268 96 273 -1 1 -265 5 -587 8 -322 4 -617 10 -657 14 l-72 7 360 363 359 362 315 0 c293 0 315 1 315 18 0 31 -48 215 -80 307 -41 116 -118 273 -182 372 -58 89 -107 153 -116 153 -4 0 -63 -55 -132 -123z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="name">MOROZCO</div>
+    </div>
+    <div class="nav">
+      <span>FRACTIONAL CTO</span>
+      <span>CYPRUS</span>
+    </div>
+  </header>
+
+  <!-- Content blocks -->
+  <div class="overlay">
+    <section class="block visible" data-range="0,22">
+      <div class="eyebrow">Sector 01 · Signal</div>
+      <h1>Fractional CTO for founders building AI products.</h1>
+      <p class="muted">17 years in software. The last six building products with AI agents as part of the team.</p>
+    </section>
+
+    <section class="block" data-range="30,52">
+      <div class="eyebrow">Sector 02 · Practice</div>
+      <h2>Architecture, hiring, hands-on code.</h2>
+      <p>I help founders pick the right shape for their product, hire the first engineers, and still ship code myself with Claude Code every day.</p>
+    </section>
+
+    <section class="block" data-range="58,78">
+      <div class="eyebrow">Sector 03 · Operator</div>
+      <h2>Operator, not advisor.</h2>
+      <p>Four parallel Claude Code sessions, SOP-driven agents, decision logs. Architecture gets tested in code the same week, not in slide decks.</p>
+    </section>
+
+    <section class="block" data-range="84,100">
+      <div class="eyebrow">Sector 04 · Contact</div>
+      <ul>
+        <li><span class="k">Email</span><span class="v"><a href="mailto:kirill@morozco.tech">kirill@morozco.tech</a></span></li>
+        <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/kirill-morozov-51003037/">in/kirill-morozov-51003037</a></span></li>
+        <li><span class="k">Location</span><span class="v">Cyprus</span></li>
+        <li><span class="k">Stack</span><span class="v">Claude Code · TypeScript · Next.js · MCP · Drizzle</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- HUD (bottom) -->
+  <div class="hud">
+    <div class="col">
+      <div><span class="bracket">MOROZCO.TECH</span></div>
+      <div class="hint" id="hint">&gt; SCROLL TO ENGAGE</div>
+    </div>
+    <div class="col right">
+      <div>SECTOR <span class="num" id="sector">01</span> / 04</div>
+      <div>PROGRESS <span class="num" id="pct">000</span><span class="num">%</span></div>
+      <div>STATUS <span class="hot">NOMINAL</span></div>
+    </div>
+  </div>
+
+  <noscript>
+    <style>
+      canvas#scene, .vignette, .scroll-spacer, .progress, .hud { display: none !important; }
+      .overlay { position: static !important; min-height: 100vh; padding: 120px 24px 60px; }
+      .block { position: static !important; opacity: 1 !important; transform: none !important; margin: 40px auto; }
+    </style>
+  </noscript>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.169.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.169.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module">
+    /* ============================================================
+       THREE.JS SCENE (tunnel, curve, logos, monolith)
+    ============================================================ */
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      document.querySelectorAll('.block').forEach(b => b.classList.add('visible'));
+    } else {
+      try {
+        const THREE = await import('three');
+
+        const canvas = document.getElementById('scene');
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x05070b, 1);
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x05070b, 0.011);
+
+        const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+
+        const isMobile = window.innerWidth < 768;
+
+        /* ---------- curve path ---------- */
+        const curve = new THREE.CatmullRomCurve3([
+          new THREE.Vector3(   0,   0,    0),
+          new THREE.Vector3(  18,   6,  -60),
+          new THREE.Vector3( -22,  -2, -130),
+          new THREE.Vector3(  14,  10, -210),
+          new THREE.Vector3(  -8,  -6, -290),
+          new THREE.Vector3(  20,   4, -370),
+          new THREE.Vector3( -16,  -8, -460),
+          new THREE.Vector3(   6,   2, -550),
+          new THREE.Vector3(   0,   0, -640),
+        ], false, 'catmullrom', 0.5);
+
+        /* ---------- double wireframe tube ---------- */
+        const tubeGeo = new THREE.TubeGeometry(curve, 320, 13, 14, false);
+        const tubeMat = new THREE.LineBasicMaterial({ color: 0x1a2332, transparent: true, opacity: 0.55 });
+        const tube = new THREE.LineSegments(new THREE.WireframeGeometry(tubeGeo), tubeMat);
+        scene.add(tube);
+
+        const outerTubeGeo = new THREE.TubeGeometry(curve, 200, 32, 8, false);
+        const outerTubeMat = new THREE.LineBasicMaterial({ color: 0x0d1320, transparent: true, opacity: 0.38 });
+        const outerTube = new THREE.LineSegments(new THREE.WireframeGeometry(outerTubeGeo), outerTubeMat);
+        scene.add(outerTube);
+
+        /* ---------- cyan ribbon trace on the curve ---------- */
+        const ribbonPts = curve.getPoints(500);
+        const ribbonGeo = new THREE.BufferGeometry().setFromPoints(ribbonPts);
+        const ribbonMat = new THREE.LineBasicMaterial({ color: 0x8ab4d0, transparent: true, opacity: 0.4 });
+        const ribbon = new THREE.Line(ribbonGeo, ribbonMat);
+        scene.add(ribbon);
+
+        /* ---------- starfield along curve ---------- */
+        const STAR_COUNT = isMobile ? 900 : 2400;
+        const starGeo = new THREE.BufferGeometry();
+        const sPos = new Float32Array(STAR_COUNT * 3);
+        const sCol = new Float32Array(STAR_COUNT * 3);
+        const cBright = new THREE.Color(0xdfe3ec);
+        const cSteel  = new THREE.Color(0x8ab4d0);
+        const cDim    = new THREE.Color(0x3a4560);
+        for (let i = 0; i < STAR_COUNT; i++) {
+          const i3 = i * 3;
+          const t = Math.random();
+          const p = curve.getPointAt(t);
+          const r = 28 + Math.random() * 220;
+          const a = Math.random() * Math.PI * 2;
+          sPos[i3]   = p.x + Math.cos(a) * r;
+          sPos[i3+1] = p.y + (Math.random() - 0.5) * r;
+          sPos[i3+2] = p.z + Math.sin(a) * r;
+          const rnd = Math.random();
+          const c = rnd > 0.92 ? cSteel : (rnd > 0.5 ? cBright : cDim);
+          sCol[i3] = c.r; sCol[i3+1] = c.g; sCol[i3+2] = c.b;
+        }
+        starGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+        starGeo.setAttribute('color', new THREE.BufferAttribute(sCol, 3));
+        const starMat = new THREE.PointsMaterial({
+          size: 1.3, vertexColors: true, transparent: true, opacity: 0.9,
+          sizeAttenuation: true, depthWrite: false, blending: THREE.AdditiveBlending,
+        });
+        scene.add(new THREE.Points(starGeo, starMat));
+
+        /* ---------- TECH LOGOS along curve (simple-icons via canvas textures) ---------- */
+        // simple-icons are free (CC0), served from jsdelivr, single-path SVGs.
+        const techLogos = [
+          { slug: 'anthropic',  label: 'CLAUDE' },
+          { slug: 'typescript', label: 'TS' },
+          { slug: 'nextdotjs',  label: 'NEXT.JS' },
+          { slug: 'react',      label: 'REACT' },
+          { slug: 'nodedotjs',  label: 'NODE' },
+          { slug: 'bun',        label: 'BUN' },
+          { slug: 'vercel',     label: 'VERCEL' },
+          { slug: 'cloudflare', label: 'CLOUDFLARE' },
+          { slug: 'stripe',     label: 'STRIPE' },
+          { slug: 'openai',     label: 'OPENAI' },
+        ];
+
+        function makeLabelTexture(text, color = '#c9d9e8') {
+          const c = document.createElement('canvas');
+          c.width = 512; c.height = 128;
+          const x = c.getContext('2d');
+          x.fillStyle = 'rgba(0,0,0,0)';
+          x.fillRect(0,0,c.width,c.height);
+          x.font = 'bold 56px "Orbitron", sans-serif';
+          x.fillStyle = color;
+          x.textAlign = 'center';
+          x.textBaseline = 'middle';
+          x.shadowColor = color;
+          x.shadowBlur = 20;
+          x.fillText(text, c.width/2, c.height/2);
+          const tex = new THREE.CanvasTexture(c);
+          tex.needsUpdate = true;
+          return tex;
+        }
+
+        async function loadIconTexture(slug, fallbackLabel) {
+          try {
+            const res = await fetch(`https://cdn.jsdelivr.net/npm/simple-icons@11/icons/${slug}.svg`);
+            if (!res.ok) throw new Error('fetch fail');
+            let svg = await res.text();
+            // force fill to steel-cyan and add glow-friendly stroke
+            svg = svg.replace('<svg', '<svg fill="%23c9d9e8"').replace(/fill="currentColor"/g, 'fill="#c9d9e8"');
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            const url = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+            await new Promise((ok, bad) => { img.onload = ok; img.onerror = bad; img.src = url; });
+            const c = document.createElement('canvas');
+            c.width = 256; c.height = 256;
+            const x = c.getContext('2d');
+            x.shadowColor = '#8ab4d0';
+            x.shadowBlur = 24;
+            x.drawImage(img, 32, 32, 192, 192);
+            const tex = new THREE.CanvasTexture(c);
+            tex.needsUpdate = true;
+            return tex;
+          } catch (e) {
+            return makeLabelTexture(fallbackLabel);
+          }
+        }
+
+        const logoGroup = new THREE.Group();
+        scene.add(logoGroup);
+
+        // place logos along curve (equally spaced, jittered)
+        const logoSlots = techLogos.length;
+        const logoMeshes = [];
+        for (let i = 0; i < logoSlots; i++) {
+          const t = 0.08 + (i / (logoSlots)) * 0.85;
+          const pos = curve.getPointAt(t);
+          const tan = curve.getTangentAt(t);
+          // offset to the side of the curve so camera flies past, not into
+          const normal = new THREE.Vector3(-tan.y, tan.x, 0).normalize();
+          const side = (i % 2 === 0 ? 1 : -1);
+          const radius = 18 + (i % 3) * 4;
+          pos.add(normal.clone().multiplyScalar(side * radius));
+          pos.y += (i % 2 === 0 ? 3 : -3);
+
+          // placeholder material (gets updated when texture loads)
+          const mat = new THREE.MeshBasicMaterial({
+            transparent: true,
+            opacity: 0.95,
+            depthWrite: false,
+            side: THREE.DoubleSide,
+            color: 0xc9d9e8,
+          });
+          const plane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), mat);
+          plane.position.copy(pos);
+          plane.userData = { baseT: t };
+          logoGroup.add(plane);
+          logoMeshes.push(plane);
+
+          // lazy-load texture
+          loadIconTexture(techLogos[i].slug, techLogos[i].label).then(tex => {
+            mat.map = tex;
+            mat.color.set(0xffffff);
+            mat.needsUpdate = true;
+          });
+
+          // add a small hex/ring halo around logo for tech-feel
+          const haloGeo = new THREE.RingGeometry(7, 7.3, 6);
+          const haloMat = new THREE.MeshBasicMaterial({
+            color: 0x8ab4d0, transparent: true, opacity: 0.5, side: THREE.DoubleSide,
+          });
+          const halo = new THREE.Mesh(haloGeo, haloMat);
+          halo.position.copy(pos);
+          halo.userData = { baseT: t, isHalo: true };
+          logoGroup.add(halo);
+          logoMeshes.push(halo);
+        }
+
+        /* ---------- graph network (edges between logos) ---------- */
+        const edgeVerts = [];
+        for (let i = 0; i < logoMeshes.length; i += 2) {   // only logo planes, not halos
+          for (let j = i + 2; j < logoMeshes.length; j += 2) {
+            const a = logoMeshes[i].position;
+            const b = logoMeshes[j].position;
+            if (a.distanceTo(b) < 70) {
+              edgeVerts.push(a.x, a.y, a.z, b.x, b.y, b.z);
+            }
+          }
+        }
+        const edgeGeo = new THREE.BufferGeometry();
+        edgeGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(edgeVerts), 3));
+        const edgeMat = new THREE.LineBasicMaterial({ color: 0x2a3a52, transparent: true, opacity: 0.5 });
+        scene.add(new THREE.LineSegments(edgeGeo, edgeMat));
+
+        /* ---------- 3D Morozco logo at the end of the curve (SVGLoader + Extrude) ---------- */
+        const endPos = curve.getPointAt(0.98);
+        const endTan = curve.getTangentAt(0.98);
+        const monoPos = endPos.clone().add(endTan.clone().multiplyScalar(70));
+
+        const monoGroup = new THREE.Group();
+        monoGroup.position.copy(monoPos);
+        scene.add(monoGroup);
+
+        // faint disc behind
+        const disc = new THREE.Mesh(
+          new THREE.CircleGeometry(36, 64),
+          new THREE.MeshBasicMaterial({ color: 0x0a0f1a, transparent: true, opacity: 0.9 })
+        );
+        disc.position.z = -3;
+        monoGroup.add(disc);
+
+        const rim = new THREE.Mesh(
+          new THREE.RingGeometry(35.5, 36, 96),
+          new THREE.MeshBasicMaterial({ color: 0x8ab4d0, transparent: true, opacity: 0.9, side: THREE.DoubleSide })
+        );
+        monoGroup.add(rim);
+
+        // load SVG logo and extrude (inlined to avoid file:// CORS)
+        const MOROZCO_SVG = `<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+<g transform="translate(0,1024) scale(0.1,-0.1)" fill="#000000">
+<path d="M4780 7746 c-239 -43 -477 -137 -677 -269 -107 -71 -133 -94 -116 -105 6 -4 259 -248 563 -542 303 -294 556 -535 560 -535 9 0 186 168 710 674 151 146 310 299 352 340 l77 74 -44 34 c-208 159 -495 278 -815 338 -19 4 -134 9 -255 11 -198 3 -233 1 -355 -20z"/>
+<path d="M3622 7024 c-371 -512 -444 -1192 -191 -1774 97 -222 229 -410 415 -590 l119 -115 3 843 c1 541 6 842 12 840 8 -2 456 -426 823 -777 l77 -74 0 285 0 285 -77 74 c-43 41 -206 198 -363 350 -369 357 -753 719 -762 719 -5 0 -29 -29 -56 -66z"/>
+<path d="M6410 6967 c-69 -67 -269 -259 -445 -427 -176 -168 -390 -372 -476 -455 l-157 -150 5 -890 c3 -489 6 -891 7 -892 3 -3 167 28 245 48 155 38 377 135 517 224 298 191 550 480 685 788 37 84 102 268 96 273 -1 1 -265 5 -587 8 -322 4 -617 10 -657 14 l-72 7 360 363 359 362 315 0 c293 0 315 1 315 18 0 31 -48 215 -80 307 -41 116 -118 273 -182 372 -58 89 -107 153 -116 153 -4 0 -63 -55 -132 -123z"/>
+</g>
+</svg>`;
+        try {
+          const { SVGLoader } = await import('three/addons/loaders/SVGLoader.js');
+          const loader = new SVGLoader();
+          const data = loader.parse(MOROZCO_SVG);
+          const paths = data.paths;
+
+          const logoMeshGroup = new THREE.Group();
+          for (const path of paths) {
+            const shapes = SVGLoader.createShapes(path);
+            for (const shape of shapes) {
+              const geo = new THREE.ExtrudeGeometry(shape, { depth: 4, bevelEnabled: true, bevelSize: 0.4, bevelThickness: 0.4, bevelSegments: 2 });
+              const mat = new THREE.MeshBasicMaterial({ color: 0xc9d9e8, transparent: true, opacity: 0.95 });
+              const mesh = new THREE.Mesh(geo, mat);
+              logoMeshGroup.add(mesh);
+            }
+          }
+          // center + scale + orient toward camera approach
+          const box = new THREE.Box3().setFromObject(logoMeshGroup);
+          const center = new THREE.Vector3();
+          box.getCenter(center);
+          logoMeshGroup.position.sub(center);
+          const size = new THREE.Vector3();
+          box.getSize(size);
+          const scale = 50 / Math.max(size.x, size.y);
+          logoMeshGroup.scale.set(scale, -scale, scale); // flip Y (SVG is y-down)
+          monoGroup.add(logoMeshGroup);
+          monoGroup.userData.logoInner = logoMeshGroup;
+        } catch (e) {
+          console.warn('SVG logo failed, falling back to icosahedron', e);
+          const ico = new THREE.Mesh(
+            new THREE.IcosahedronGeometry(20, 1),
+            new THREE.MeshBasicMaterial({ color: 0x0a0f1a })
+          );
+          const wire = new THREE.LineSegments(
+            new THREE.WireframeGeometry(ico.geometry),
+            new THREE.LineBasicMaterial({ color: 0x8ab4d0 })
+          );
+          monoGroup.add(ico); monoGroup.add(wire);
+        }
+
+        // glow plane behind the logo
+        const glow = new THREE.Mesh(
+          new THREE.CircleGeometry(90, 32),
+          new THREE.MeshBasicMaterial({ color: 0x8ab4d0, transparent: true, opacity: 0.08, depthWrite: false, blending: THREE.AdditiveBlending })
+        );
+        glow.position.z = -8;
+        monoGroup.add(glow);
+
+        /* ---------- scroll → curve parameter ---------- */
+        let targetT = 0;
+        let currentT = 0;
+        const blocks = Array.from(document.querySelectorAll('.block')).map(el => {
+          const [a, b] = el.dataset.range.split(',').map(Number);
+          return { el, from: a / 100, to: b / 100 };
+        });
+        const progressBar = document.getElementById('progress');
+        const hint = document.getElementById('hint');
+        const sectorEl = document.getElementById('sector');
+        const pctEl = document.getElementById('pct');
+
+        function onScroll() {
+          const max = document.body.scrollHeight - window.innerHeight;
+          const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+          targetT = p;
+          progressBar.style.width = (p * 100) + '%';
+          for (const b of blocks) b.el.classList.toggle('visible', p >= b.from && p <= b.to);
+          sectorEl.textContent = String(Math.min(4, Math.floor(p * 4) + 1)).padStart(2, '0');
+          pctEl.textContent = String(Math.floor(p * 100)).padStart(3, '0');
+          if (p > 0.02) hint.classList.add('hide'); else hint.classList.remove('hide');
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        function onResize() {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', onResize);
+
+        // camera initial
+        const p0 = curve.getPointAt(0);
+        const t0 = curve.getTangentAt(0);
+        camera.position.copy(p0);
+        camera.lookAt(p0.clone().add(t0));
+
+        const clock = new THREE.Clock();
+        const tmpLook = new THREE.Vector3();
+
+        function tick() {
+          const t = clock.getElapsedTime();
+
+          // ease curve parameter
+          currentT += (targetT - currentT) * 0.055;
+          const ct = Math.min(0.999, Math.max(0, currentT));
+
+          const pos = curve.getPointAt(ct);
+          const look = curve.getPointAt(Math.min(0.999, ct + 0.012));
+          camera.position.copy(pos);
+          camera.position.x += Math.sin(t * 0.4) * 0.35;
+          camera.position.y += Math.cos(t * 0.3) * 0.25;
+          camera.lookAt(look);
+          camera.up.set(Math.sin(t * 0.15) * 0.06, 1, 0);
+
+          // logos face camera always (billboard), pulse as camera approaches
+          for (const m of logoMeshes) {
+            if (!m.userData.isHalo) m.lookAt(camera.position);
+            const dist = m.position.distanceTo(camera.position);
+            const near = Math.max(0, 1 - Math.min(1, dist / 60));
+            if (m.userData.isHalo) {
+              m.material.opacity = 0.35 + near * 0.55;
+              m.rotation.z = t * (0.3 + m.userData.baseT);
+            } else {
+              m.material.opacity = 0.6 + near * 0.4;
+              const s = 1 + near * 0.25;
+              m.scale.set(s, s, s);
+            }
+          }
+
+          // monolith group: rotate logo inner, face camera-ish
+          if (monoGroup.userData.logoInner) {
+            monoGroup.userData.logoInner.rotation.y = t * 0.25;
+          }
+          monoGroup.lookAt(camera.position.clone().setY(monoGroup.position.y));
+
+          // ribbon breathe
+          ribbonMat.opacity = 0.3 + Math.sin(t * 1.2) * 0.12;
+
+          renderer.render(scene, camera);
+          requestAnimationFrame(tick);
+        }
+        tick();
+      } catch (err) {
+        console.warn('three.js failed, falling back to static layout', err);
+        document.querySelectorAll('.block').forEach(b => b.classList.add('visible'));
+        const c = document.getElementById('scene'); if (c) c.style.display = 'none';
+        const s = document.querySelector('.scroll-spacer'); if (s) s.style.display = 'none';
+        const v = document.querySelector('.vignette'); if (v) v.style.display = 'none';
+        const h = document.querySelector('.hud'); if (h) h.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
