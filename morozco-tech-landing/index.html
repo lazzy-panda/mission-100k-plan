@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://morozco.tech">
 
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -273,6 +274,64 @@
     .hud .bracket::before { content: "["; color: var(--dim); margin-right: 4px; }
     .hud .bracket::after  { content: "]"; color: var(--dim); margin-left: 4px; }
 
+    /* ---------- portfolio cards ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 20px 18px;
+      background: rgba(8, 11, 18, 0.7);
+      transition: border-color 300ms ease, box-shadow 300ms ease;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px rgba(138,180,208,0.08);
+    }
+    .card-icon {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .card-icon svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.7;
+    }
+    .card:hover .card-icon svg { opacity: 1; }
+    .card-title {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-2);
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .card-desc {
+      color: var(--fg);
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .card-tech {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
     /* ---------- responsive ---------- */
     @media (max-width: 720px) {
       h1 { font-size: 28px; }
@@ -281,6 +340,7 @@
       .hud { font-size: 9px; }
       .header .nav { display: none; }
       li .k { min-width: 80px; }
+      .cards { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -325,26 +385,101 @@
 
   <!-- Content blocks -->
   <div class="overlay">
-    <section class="block visible" data-range="0,22">
+    <section class="block visible" data-range="0,16">
       <div class="eyebrow">Sector 01 · Signal</div>
       <h1>Fractional CTO for founders building AI products.</h1>
       <p class="muted">17 years in software. The last six building products with AI agents as part of the team.</p>
     </section>
 
-    <section class="block" data-range="30,52">
+    <section class="block" data-range="20,36">
       <div class="eyebrow">Sector 02 · Practice</div>
       <h2>Architecture, hiring, hands-on code.</h2>
       <p>I help founders pick the right shape for their product, hire the first engineers, and still ship code myself with Claude Code every day.</p>
     </section>
 
-    <section class="block" data-range="58,78">
+    <section class="block" data-range="40,56">
       <div class="eyebrow">Sector 03 · Operator</div>
       <h2>Operator, not advisor.</h2>
       <p>Four parallel Claude Code sessions, SOP-driven agents, decision logs. Architecture gets tested in code the same week, not in slide decks.</p>
     </section>
 
-    <section class="block" data-range="84,100">
-      <div class="eyebrow">Sector 04 · Contact</div>
+    <section class="block" data-range="60,76">
+      <div class="eyebrow">Sector 04 · Portfolio</div>
+      <h2>Products I built and run.</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- TV screen with route/map -->
+              <rect x="6" y="8" width="36" height="24" rx="2" stroke="#8ab4d0" stroke-width="1.5"/>
+              <line x1="18" y1="32" x2="18" y2="38" stroke="#8ab4d0" stroke-width="1.5"/>
+              <line x1="30" y1="32" x2="30" y2="38" stroke="#8ab4d0" stroke-width="1.5"/>
+              <line x1="14" y1="38" x2="34" y2="38" stroke="#8ab4d0" stroke-width="1.5"/>
+              <!-- route dots inside screen -->
+              <circle cx="14" cy="16" r="2" fill="#8ab4d0"/>
+              <circle cx="24" cy="22" r="2" fill="#7dd3fc"/>
+              <circle cx="34" cy="16" r="2" fill="#8ab4d0"/>
+              <path d="M14 16 L24 22 L34 16" stroke="#8ab4d0" stroke-width="1" stroke-dasharray="2 2" opacity="0.6"/>
+              <!-- voice waves -->
+              <path d="M38 14 C40 16 40 20 38 22" stroke="#7dd3fc" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+              <path d="M40 12 C43 16 43 20 40 24" stroke="#7dd3fc" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="card-title">Praxisansatz</div>
+          <p class="card-desc">Patient information system for clinics. Doctor finishes an appointment, presses a button. Smart TV in the waiting room shows: who is next, which doctor, route to the room on an interactive map. Plus voice announcement. Running in several clinics in Germany.</p>
+          <div class="card-tech">Python · Angular · WebSocket · Google Cloud</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Telegram plane -->
+              <path d="M6 24 L42 10 L34 40 L24 28 Z" stroke="#8ab4d0" stroke-width="1.5" fill="none"/>
+              <line x1="42" y1="10" x2="24" y2="28" stroke="#8ab4d0" stroke-width="1.5"/>
+              <line x1="24" y1="28" x2="24" y2="38" stroke="#8ab4d0" stroke-width="1.5"/>
+              <line x1="24" y1="38" x2="30" y2="32" stroke="#8ab4d0" stroke-width="1.5"/>
+              <!-- RSS signal arcs -->
+              <circle cx="10" cy="38" r="2" fill="#7dd3fc"/>
+              <path d="M10 32 C14 32 18 36 18 38" stroke="#7dd3fc" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+              <path d="M10 26 C18 26 24 34 24 38" stroke="#7dd3fc" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="card-title">Good News / Beauty News</div>
+          <p class="card-desc">Two autonomous Telegram channels. Good News covers tech/AI/startups, Beauty News covers beauty and fashion. 60+ RSS sources, OpenAI filtering, audio digests via NotebookLM, scheduled publishing via GitHub Actions. Fully automatic, fresh content every day with zero manual work.</p>
+          <div class="card-tech">Python · OpenAI · GitHub Actions · NotebookLM</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Brain/learning: flashcard stack + neural connections -->
+              <rect x="8" y="14" width="20" height="14" rx="2" stroke="#8ab4d0" stroke-width="1.5" opacity="0.4"/>
+              <rect x="12" y="10" width="20" height="14" rx="2" stroke="#8ab4d0" stroke-width="1.5" opacity="0.6"/>
+              <rect x="16" y="6" width="20" height="14" rx="2" stroke="#8ab4d0" stroke-width="1.5"/>
+              <!-- Q mark on top card -->
+              <text x="26" y="16" font-family="monospace" font-size="10" fill="#7dd3fc" text-anchor="middle">Q</text>
+              <!-- neural dots below -->
+              <circle cx="14" cy="36" r="2" fill="#8ab4d0" opacity="0.6"/>
+              <circle cx="24" cy="34" r="2.5" fill="#7dd3fc"/>
+              <circle cx="34" cy="36" r="2" fill="#8ab4d0" opacity="0.6"/>
+              <circle cx="19" cy="42" r="1.5" fill="#8ab4d0" opacity="0.4"/>
+              <circle cx="29" cy="42" r="1.5" fill="#8ab4d0" opacity="0.4"/>
+              <!-- connections -->
+              <line x1="14" y1="36" x2="24" y2="34" stroke="#8ab4d0" stroke-width="0.8" opacity="0.4"/>
+              <line x1="24" y1="34" x2="34" y2="36" stroke="#8ab4d0" stroke-width="0.8" opacity="0.4"/>
+              <line x1="14" y1="36" x2="19" y2="42" stroke="#8ab4d0" stroke-width="0.8" opacity="0.3"/>
+              <line x1="34" y1="36" x2="29" y2="42" stroke="#8ab4d0" stroke-width="0.8" opacity="0.3"/>
+              <line x1="24" y1="34" x2="19" y2="42" stroke="#8ab4d0" stroke-width="0.8" opacity="0.3"/>
+              <line x1="24" y1="34" x2="29" y2="42" stroke="#8ab4d0" stroke-width="0.8" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="card-title">Daxi</div>
+          <p class="card-desc">AI platform for learning and testing. Upload any material, the system generates questions, flashcards, tests. GPT checks answers and explains mistakes. Spaced repetition for long-term memory. Ready to deploy.</p>
+          <div class="card-tech">FastAPI · React Native · ChromaDB · OpenAI</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" data-range="82,100">
+      <div class="eyebrow">Sector 05 · Contact</div>
       <ul>
         <li><span class="k">Email</span><span class="v"><a href="mailto:kirill@morozco.tech">kirill@morozco.tech</a></span></li>
         <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/kirill-morozov-51003037/">in/kirill-morozov-51003037</a></span></li>
@@ -361,7 +496,7 @@
       <div class="hint" id="hint">&gt; SCROLL TO ENGAGE</div>
     </div>
     <div class="col right">
-      <div>SECTOR <span class="num" id="sector">01</span> / 04</div>
+      <div>SECTOR <span class="num" id="sector">01</span> / 05</div>
       <div>PROGRESS <span class="num" id="pct">000</span><span class="num">%</span></div>
       <div>STATUS <span class="hot">NOMINAL</span></div>
     </div>
@@ -690,7 +825,7 @@
           targetT = p;
           progressBar.style.width = (p * 100) + '%';
           for (const b of blocks) b.el.classList.toggle('visible', p >= b.from && p <= b.to);
-          sectorEl.textContent = String(Math.min(4, Math.floor(p * 4) + 1)).padStart(2, '0');
+          sectorEl.textContent = String(Math.min(5, Math.floor(p * 5) + 1)).padStart(2, '0');
           pctEl.textContent = String(Math.floor(p * 100)).padStart(3, '0');
           if (p > 0.02) hint.classList.add('hide'); else hint.classList.remove('hide');
         }
