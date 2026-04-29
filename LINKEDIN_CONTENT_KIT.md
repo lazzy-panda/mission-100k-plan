@@ -1,20 +1,25 @@
-# LinkedIn Content Kit — 12 posts × 4 weeks (v2, audited 08.04.2026)
+# LinkedIn Content Kit — 12 posts (v3, audited 29.04.2026)
 
-> **Audit log (08.04.2026):** full rewrite from Russian v1 to English v2. Applied `feedback_human_writing.md` rules: stripped em dashes, arrows, AI vocab, native idioms, X-not-Y patterns, hook→bullets→wrap→question structure, and closing CTAs. Rewritten in non-native simple voice (Russian engineer typing English, not press release).
+> **Audit log (29.04.2026):** ICP audit revealed v2 kit was 9/12 posts targeted to wrong audience (engineers, AI-tool enthusiasts) instead of Track 2 ICP (non-tech founders with tech pain). Posts 1-3 already published as v2; kept for record. Posts 4-12 rewritten under v3 with ICP focus on non-tech buyers.
 >
-> **Language switch:** RU → EN. Reason: LinkedIn profile is in English, outreach targets are international (Cyprus, IL, RO, US, DE, IN), Mission $100K ICP is international founders. RU would reach only a narrow segment.
+> **v3 Strategy:** Track 2 funnel = founders / business owners with technical pain. They want to see what was built, what changed, when to hire help, what AI actually does. They do NOT want code snippets, build-in-public personal-progress threads, or engineering career hot takes.
 >
-> **Post 1 replaced** with "Today I dropped Notion" — topical, live on 08.04.2026, better hook than the original "console replaces apps" angle.
+> **v3 Content mix:**
+> - 3 case studies (anonymized client work showing what was built and what changed)
+> - 4 decision-help posts (when to hire a Tech Lead, how to scope a tech project, etc.)
+> - 2 industry insights (anti-hype takes on AI, dev team signals)
+> - 2 personality / strategy (decision log, build-in-public retained but reframed)
+> - 1 case study slot for user-drafted medoc post
 >
-> **Schedule:** 3 posts per week on Wed / Fri / Sun starting 08.04.2026.
->
-> **Positioning:** Fractional CTO + solo founder + Claude Code agentic runtime + stealth EdTech.
+> **Schedule:** 3 posts per week on Wed / Fri / Sun. Posts 4-12 to be queued for publication starting 30.04.
 
 ---
 
-## 🗓 Week 1 — Hook and manifesto (08.04 – 12.04)
+## 🗓 Already published (v2, kept for record)
 
-### Post 1 · Wed 08.04 · [Build-in-public] Today I dropped Notion
+### Post 1 · Wed 08.04 · [Build-in-public] Today I dropped Notion · ✅ PUBLISHED
+
+> ⚠ ICP misalignment: tech-tooling audience, not Track 2 ICP. Kept as historical record.
 
 ```
 Today I dropped Notion.
@@ -34,280 +39,209 @@ A tracker that lives outside your work always loses to a tool built into the wor
 
 ---
 
-### Post 2 · Fri 10.04 · [Opinion] Cyberpsychosis is not science fiction, this is 2026
+### Post 2 · Fri 10.04 · [Opinion] Cyberpsychosis is not science fiction · ✅ PUBLISHED
 
-**Image:** `assets/freepik_cinematic-cyberpunk-scene_2752149138.png` (engineer at desk with floating holographic terminal windows, cyan+amber lighting)
+> ⚠ ICP misalignment: AI-engineering audience. Kept as historical record.
+
+(Full text unchanged from v2 — see git history.)
+
+---
+
+### Post 3 · Sun 12.04 · [TIL] setNativeValue for React forms · ✅ PUBLISHED
+
+> ⚠ ICP misalignment: pure dev tutorial. Kept as historical record.
+
+(Full text unchanged from v2 — see git history.)
+
+---
+
+## 🗓 v3 Queue (starting 30.04 publication)
+
+### Post 4 · [Decision-help] When non-tech founders should hire a Tech Lead
 
 ```
-Garry Tan said at SXSW last month he has "cyber psychosis." Sleeps 4 hours. Can't stop building with Claude Code. He joked a third of the CEOs he knows have it too.
+Most founders ask me the wrong question. "Should I hire a CTO?"
 
-Not a CEO. Don't run YC. Smaller version of the same thing over here.
+Better question: what stage am I at, and what does it cost me to skip a tech lead now?
 
-12 agents. 40 MCP servers. Three parallel Claude sessions.
-3am wake-ups to check if one of them broke main.
-No memory of what was me and what was an agent.
-Thoughts come out as prompts before they finish forming.
+When you need someone like me on the team:
 
-Garry rebuilt a startup that took him $10M and 10 people over two years. Solo, in a few weeks, with his gstack. Everyone talks about the $10M. Nobody talks about the sleep.
+You have a working MVP, but every new feature breaks two old ones. The codebase makes changes more expensive every week.
 
-The fix isn't fewer tools. It's architecture.
+You hired two devs, they shipped fine, then ran into a problem they could not solve themselves and started arguing. They need a senior architect to decide, not more devs.
 
-A clear line between what agents do, what you do, and a process with versions in between. A decision log you can't skip. A memory you can't fake.
+You're about to sign a customer who requires SOC2, HIPAA, GDPR, or any compliance flag. Your devs don't know how to scope this.
 
-Without that you slip from operator to user. And the user always loses to the interface.
+When you don't:
 
-So yes, I have it too. Building an internal OS for my own agentic runtime. I want to run the machine, not the other way around.
+You haven't sold anything yet. Build the MVP, sell it, then worry about scale.
+
+Your tech is a basic CRUD app. No real-time, no compliance, no scale. WordPress and Webflow exist for a reason.
+
+Your dev team is happy and shipping. Don't change what works.
+
+A tech lead 1-2 days a week costs less than one wrong architecture decision. But not every business has a tech-lead-shaped problem.
+
+If you don't know which side you're on, wait one month. The answer becomes obvious.
 ```
 
 ---
 
-### Post 3 · Sun 12.04 · [TIL] setNativeValue for React forms in Playwright
+### Post 5 · [Case] How a content platform survived a hard legal deadline
 
 ```
-TIL about automating React forms with Playwright.
+Case: a Russian content platform with creators and brands. Two problems on my desk when I joined.
 
-This week I updated my full LinkedIn profile with a script. Every input is a controlled React component.
+One. A new national law forced every digital ad on the platform into a state registry within hours of going live, or the platform pays a fine per ad. Existing manual flow took 3 hours of ops work per day. Hard legal deadline.
 
-The problem: plain element.value = 'text' doesn't trigger React state. The component doesn't see the change, and save sends empty fields.
+Two. The platform served multiple business teams inside one client organisation. Teams kept seeing each other's drafts, videos, and brands. No isolation. Internal complaints rising.
 
-The fix:
+What I built.
 
-const setter = Object.getOwnPropertyDescriptor(
-  Object.getPrototypeOf(el), 'value'
-).set;
-setter.call(el, 'new value');
-el.dispatchEvent(new Event('input', { bubbles: true }));
+For the registry. End-to-end pipeline from creator upload to legal registry. Idempotent and self-healing. Retries with backoff. Status reconciliation against the state registry every hour. Around 2M creatives a month flow through. Zero compliance incidents since go-live.
 
-This grabs the native DOM setter, bypasses the React wrapper, and dispatches the input event by hand. React accepts it as a real change.
+For the teams. Multi-tenant workspace layer. Admin-managed teams with strict data scopes. A team admin sees only their team's tasks, videos, brands, companies. Access enforced at the data boundary, not the UI. A clever URL or a misclick cannot leak data.
 
-Checkboxes work differently. element.click() gets eaten by React. You have to click through the Playwright role selector.
+What changed for the client.
 
-Result: my full LinkedIn (headline, about, 3 experience cards, 8 skills) updated in 20 minutes without manual copy-paste.
+3 hours a day of manual ops became zero.
+Internal cross-team data leaks went to zero.
+The platform passed the legal deadline.
 
-Playwright plus Claude Code plus one evaluate helper means I no longer open the browser to fill forms by hand.
+This is what a tech lead 2-3 days a week looks like in practice. Not "advisory". Owning the subsystem from the data model to the on-call rotation.
 ```
 
 ---
 
-## 🗓 Week 2 — System and process (13.04 – 19.04)
-
-### Post 4 · Wed 15.04 · [Problem→Solution] Keeping context between Claude sessions
+### Post 6 · [Translation] What AI actually does for your business in 2026
 
 ```
-The problem: every Claude Code session starts from zero. You explain who you are, what you do, where you stopped yesterday. Every time.
+What AI actually does for your business in 2026, with no hype.
 
-10-15 minutes lost to re-prompting. Errors from incomplete context.
+Three things AI does well right now.
 
-My fix: three files at the repo root.
+Cleans up unstructured text. Customer emails into categories. Free-text complaints into ticket types. Meeting transcripts into action items. This was hard a year ago. Now it works with simple prompts.
 
-MEMORY.md. Persistent memory about profile, goals, habits, principles. Auto-loaded into every session.
+Routes work between humans. Decide which expert handles which case. Triage support tickets by urgency. Pre-fill forms from messy input. The decision is small, the volume is high, the human stays as a check.
 
-PLAN.md. Single source of truth for current state. What's done, what's in progress, what's next. Updated at the end of every session.
+Searches your own data with natural language. "Show me customers from Q3 with refund requests over five hundred dollars". This used to need a BI team. Now an LLM with read access to the database does it in five seconds.
 
-decision_log folder. Dated files, one per architectural choice. Each file answers "why exactly this way".
+Three things AI is still bad at.
 
-Result: a new Claude catches up in 30 seconds. I write "let's continue" and we continue from yesterday's stop point.
+Anything where being wrong silently costs you money. Pricing. Forecasts. Compliance scoring. The model is confident even when wrong, and you don't see the wrong.
 
-The key piece is decision_log. In a month you won't remember why you picked Next.js App Router over Pages. The log remembers. Your future self thanks your past self.
+Long-running multi-step work without supervision. The error rate compounds. By step seven you have output you cannot trace.
 
-Three files. Thirty seconds of context. Every session.
-```
+Anything where the customer needs to feel heard. People know when they're talking to a script. AI sounds like a script.
 
----
+So the question is not "should we use AI". It is: where does our business have a small high-volume decision that humans hate doing and where we can check the output afterwards.
 
-### Post 5 · Fri 17.04 · [Build-in-public] Day 16 of 365
-
-```
-Day 16 of 365.
-
-For six months I was building under contract. Now I run a studio of one person plus a small group of AI agents.
-
-Track 1: stealth EdTech product. Customer discovery, MVP scope, first round of interviews this week.
-
-Track 2: internal Claude Code agentic runtime. 12 SOPs, 5 specialized agents, decision log on every architectural call.
-
-In parallel. LinkedIn profile fully rebuilt. 365-day learning program of 28 books and around 12,000 pages, already in week one with Thiel. Pipeline of Fractional CTO and advisory conversations in motion.
-
-Target for 365 days: $100K per month.
-
-I don't believe in "vibe work". I believe in a daily check-in with my own decision log.
-
-Once a week I'll post here: what moved, what broke, what I learned.
-
-Day 16 of 365. Going.
+That is the only good first project.
 ```
 
 ---
 
-### Post 6 · Sun 19.04 · [Opinion] I stopped saying "AI assistant". Now it's "agentic runtime"
+### Post 7 · [Industry insight] Three signs your dev team is stuck
 
 ```
-"AI assistant" is a frame I dropped from my vocabulary.
+Three signs your dev team is stuck, even if they say everything is fine.
 
-An assistant waits for tasks. You consult with it. It asks permission before every step.
+One. You ask "how long will X take?". The answer is "a week or two". Two months later it's still in QA. The team learned this is the safe answer, because the real answer is "we don't know how to estimate this thing".
 
-That's not what I need.
+Two. Every release feels riskier than the last. Bug count up. Customer complaints after deploy. Bug fixes break something else. The team isn't lazy. The codebase is past the point where humans can hold the whole thing in their heads.
 
-I need a runtime. An environment that runs itself. Starts by SOP. Makes decisions by decision log. Writes to memory. Escalates only blockers.
+Three. The team can't explain a feature in plain language. They tell you about microservices, queues, retries. You wanted to know why your customer can't reset her password. The conversation is a symptom of architecture they don't actually own.
 
-The difference is practical.
+What this looks like from the team's side. They want to ship. They want to do it well. They are stuck on decisions nobody is making, and they don't want to be the one who pushes the architecture conversation upward.
 
-Assistant mode (old): "do you want me to update LinkedIn?" "yes". It asks about every field.
+A tech lead from the outside breaks the deadlock without firing anyone. The team gets to keep their work and their dignity. You get the architecture call made.
 
-Runtime mode (mine now): it reads plan.md, sees the task "rebuild profile", opens Playwright, does it, writes the result, marks it done. I wake up. It's ready.
-
-The rename is the point. It marks a shift from "person plus tool" to "operator plus automated environment".
-
-If you still "use AI", you're behind. The job now is to build the environment. The chatbot relationship is the old model.
+The most expensive thing in tech is not bad engineers. It is good engineers running out of architectural air.
 ```
 
 ---
 
-## 🗓 Week 3 — Positioning and market (20.04 – 26.04)
+### Post 8 · [Case] Praxisansatz — German clinic patient flow · 🔧 USER DRAFTING
 
-### Post 7 · Wed 22.04 · [Opinion] Fractional CTO is the only honest path for a senior engineer in 2026
+> User is drafting this post manually based on direct work knowledge of medoc / Praxisansatz. Slot reserved.
+
+(Insert text here when ready. Suggested angle: real-world product running in DACH clinics, what it solved for non-tech medical staff, what changed in their daily operations.)
+
+---
+
+### Post 9 · [Case] How a national measurement company freed 5,000 analyst-hours a week
 
 ```
-Hot takes on senior engineer careers in 2026.
+Case: a national media measurement company. Their data is the basis of every TV, radio, and digital advertising decision in the country. 9,000 households on the panel. 500 analysts using internal tools every day.
 
-Big Tech is the road to slowing down. Performance reviews, office politics, calendars full of meetings, architecture reviews of last year's decisions.
+The problem when I joined. The internal tooling was built piece by piece over a decade by separate teams. Reports took 30 seconds to load. Analysts ran the same query through three different screens. Recurring weekly reports were generated by hand. Around 10 hours a week per analyst lost to tool friction. With 500 analysts, that is 5,000 hours a week the company paid for and got nothing back.
 
-Startup founding engineer is a lottery. High upside, 70% of options go to zero.
+What I rebuilt.
 
-Consulting is burnout. 60-hour weeks, other people's deadlines, other people's priorities.
+A shared frontend foundation. One state model, one auth, one design system. Every reporting screen on top of it.
 
-Your own SaaS is 18 to 24 months without revenue. You against the market, alone.
+Automated weekly report pipeline. Analysts stopped manually running and emailing reports. The system generated and delivered them on schedule.
 
-Fractional CTO is the one path where you:
-work 2-3 days a week per client, the rest is yours
-take 3-4 companies at the same time and diversify risk
-make architecture calls instead of tickets
-charge 15 to 30K a month per client
-leave real space for your own product
+A query layer that answered most analyst questions in under a second instead of 30.
 
-This isn't for everyone. You need reputation, network, and 6 months of patience before the first pipeline lands.
+Result. Around 10 hours a week per analyst back to actual analysis. Across 500 analysts, that is a small department's worth of work recovered. The CFO didn't see a new product on the balance sheet, but the same team was getting more done with the same headcount.
 
-But if you're a senior with 10 plus years and you're tired of wearing a badge, this is the only honest game on the market.
-
-I made the switch in October 2025. Best career call in the last ten years.
+This is the kind of work tech leadership does that nobody outside the company ever sees. No marketing. No press release. Just a quiet shift from "we need to hire ten more analysts" to "we already have them, they just couldn't work".
 ```
 
 ---
 
-### Post 8 · Fri 24.04 · [TIL] MCP servers are the new npm
+### Post 10 · [Decision-help] How to scope a tech project when you're not technical
 
 ```
-TIL: MCP servers are the new npm.
+How to scope a tech project when you're not technical.
 
-Model Context Protocol is Anthropic's standard for plugging external tools into LLM agents. Files, APIs, databases, browsers. All exposed to Claude as tools.
+You don't need to learn engineering. You need three questions before any conversation with developers.
 
-What changed in my stack in one month:
+Question one. What's the smallest thing that would tell us if this works? Not "what's the perfect product". The smallest version. You're going to be wrong about details for the first three months. Make sure you're wrong cheap.
 
-playwright-mcp for browser automation without one line of Selenium.
-filesystem-mcp for file read and write in a bounded sandbox.
-git-mcp for commits, diffs, branches straight from the prompt.
-postgres-mcp for running SQL on my local dev DB from Claude.
+Question two. If we got 10x more users tomorrow, what breaks first? This separates "we have a feature" from "we have a product that survives". You don't need the answer yourself. You need the team to have an answer they're confident in.
 
-Before, I wrote every integration layer by hand: OAuth, tokens, rate limits, error handling. Now it's `claude mcp add <server-name>` and done.
+Question three. Where in this system would a careless mistake cost us money? Login. Payments. Data export. Anywhere user input meets the database. This is where you need senior eyes, not where you save money.
 
-This is the moment the ecosystem stops being about "trying AI" and starts being about "building an operating environment on top of AI".
+If your team can't answer those three quickly, that's the gap a tech lead fills. Not building, deciding.
 
-If you don't have at least three MCP servers running, you're reading this post from 2024.
+Most non-technical founders try to learn enough engineering to talk like an engineer. That doesn't work. You're better off learning to ask sharp questions and trust the answers, or trust nobody.
 ```
 
 ---
 
-### Post 9 · Sun 26.04 · [Build-in-public] 28 books for the year
+### Post 11 · [Case] Customer discovery with AI help — what works, what does not
 
 ```
-I have 28 books queued for the year. Around 12,000 pages.
+Experiment: I ran customer discovery interviews with AI help, in parallel.
 
-Start: Saturday 11.04. Finish: April 2027.
+Setup. I do 20 interviews with potential users of an EdTech product. Standard customer discovery. The new part: an AI tool listens to the call recording, then drafts a structured analysis the same evening.
 
-Partial list:
-Thiel, Zero to One. First book, first week.
-Dalio, Principles.
-Isaacson: Jobs, Franklin, Einstein.
-Crawley, System Architecture (MIT).
-Feynman, all three volumes of the Lectures.
-Landau-Lifshitz, Mechanics and Theory of Fields.
-Goodfellow, Deep Learning.
-Sutton, Rocket Propulsion Elements.
+What worked.
 
-Why such a weird mix? Because narrow specialists have a ceiling.
+The tool generated themes across 20 interviews 30x faster than I could.
 
-Strategy and founder biographies teach decisions under uncertainty.
-Physics and math teach thinking from first principles.
-Systems engineering teaches working with complexity.
-Science fiction teaches scale (Heinlein, Herbert, Asimov).
+It caught 4 patterns I missed in my own first three calls. I was anchored on my hypothesis. The tool was not.
 
-Around 33 pages a day. One hour in the morning.
+Transcripts plus themes plus pull-quotes, ready next morning.
 
-The real goal isn't to finish the list. It's to rewrite my own operating model in 365 days.
+What did not work.
 
-I keep an open decision log per book. I'll share notes on Thiel in about a week.
+The tool cannot tell when a person is hesitating in the call itself. That is where the real signal is. So I run the live conversation, the tool runs the analysis after.
+
+On emotional answers it tries to "solve" the user's problem. A real interviewer stays silent and waits. The model is bad at silence.
+
+It missed two strong signals that were in voice tone, not in the words.
+
+Lesson. Customer discovery is not "AI replaces the human". It is "AI does the analysis the human is too tired to do at 11pm". You do the empathy. The machine does the synthesis.
+
+If you outsource the whole thing to AI, you get well-summarised wrong answers.
 ```
 
 ---
 
-## 🗓 Week 4 — Practice and principles (27.04 – 03.05)
-
-### Post 10 · Wed 29.04 · [Problem→Solution] A design system for a team of one person and five agents
-
-```
-The problem: building a design system for a team of one person and five AI agents.
-
-Classic DS like Material, Chakra, or shadcn assume a team. Docs, Storybook, contribution guidelines, token pipelines. Overkill for a solo founder.
-
-But without a system, every agent touching UI invents its own spacing, palette, and button variant. Chaos scales in a day.
-
-My fix: a single-file design system.
-
-design-system.md in the project root. 400 lines. It contains:
-8 color tokens, not 80.
-4 spacing values, not a Fibonacci ladder.
-3 typography scales.
-5 key components with usage examples.
-Links to the Tailwind config.
-
-This file loads into the context of any agent writing UI. Plus a lint rule: "if you introduce a new color, ask the operator".
-
-Result: two months of work, zero drift. The UI looks like one person made it because the docs are the one person.
-
-A design system scales by the number of constraints you accept, not by the number of components.
-```
-
----
-
-### Post 11 · Fri 01.05 · [Case] Customer discovery through a Claude agent. What worked, what broke
-
-```
-Experiment: I ran customer discovery through a Claude Code agent.
-
-Task: run 20 interviews with potential users of my stealth EdTech product, extract patterns.
-
-What worked:
-the agent generated adaptive follow-up questions in real time, as good as me
-transcripts plus thematic analysis, 30 times faster than manual
-it caught 4 insights I missed in my first three interviews
-
-What broke:
-the agent can't feel when a person is hesitating. It doesn't know how to stay silent and wait
-on emotional answers it tried to "solve the problem" instead of going deeper
-it missed two strong signals that weren't in the words, only in the tone
-
-Lesson: discovery is a hybrid. The agent runs structure and analysis. You run empathy and silence.
-
-Don't hand the live conversation to the machine. And don't run the conversation without the machine on a parallel rail.
-
-I'm now building a "hybrid interview" SOP. I talk, the agent listens in parallel, after the call we debrief from the transcript.
-
-Results in about two weeks.
-```
-
----
-
-### Post 12 · Sun 03.05 · [Opinion] Your roadmap is a waste. Decision log is everything
+### Post 12 · [Opinion] Your roadmap is a waste. Decision log is everything
 
 ```
 Unpopular opinion: roadmaps are useless.
@@ -320,55 +254,63 @@ Every meaningful decision becomes one markdown file with date, context, options,
 
 In a month, the decision log shows:
 where you are actually going, not where you promised to go
-which hypotheses held and which didn't
-where past-you was wrong and how future-you won't repeat it
+which hypotheses held and which did not
+where past-you was wrong and how future-you can avoid the same mistake
 
 In six months, the decision log is the only document you can reconstruct strategy from.
 
 A roadmap is what you show investors. The decision log is why they write the second check.
 
-I've been keeping mine since day one of the studio. 47 files in 6 months. Every time an agent or a partner asks "why like this", I don't answer. I send the link.
+I keep one for everything I run. Each major call gets one file. Every time a partner or an agent asks "why this way", I don't explain. I send the link.
 
 When was your last roadmap update?
 ```
 
 ---
 
-## 📊 Publication calendar
+## 📊 Publication calendar (v3 queue)
 
-| Plan day | Date | Post | Category |
-|----------|------|------|----------|
-| 7 | Wed 08.04 | #1 Dropped Notion | Build-in-public |
-| 9 | Fri 10.04 | #2 Cyberpsychosis | Opinion |
-| 11 | Sun 12.04 | #3 setNativeValue | TIL |
-| 14 | Wed 15.04 | #4 Context between sessions | Problem→Solution |
-| 16 | Fri 17.04 | #5 Day 16 of 365 | Build-in-public |
-| 18 | Sun 19.04 | #6 Agentic runtime | Opinion |
-| 21 | Wed 22.04 | #7 Fractional CTO path | Opinion |
-| 23 | Fri 24.04 | #8 MCP is new npm | TIL |
-| 25 | Sun 26.04 | #9 28 books for the year | Build-in-public |
-| 28 | Wed 29.04 | #10 DS for solo + agents | Problem→Solution |
-| 30 | Fri 01.05 | #11 Discovery through agent | Case |
-| 32 | Sun 03.05 | #12 Decision log > roadmap | Opinion |
+| # | Date | Post | Category | ICP target |
+|---|------|------|----------|------------|
+| 4 | Wed 30.04 | When to hire a Tech Lead | Decision-help | Non-tech founders |
+| 5 | Fri 02.05 | Content platform legal-deadline case | Case | Non-tech founders |
+| 6 | Sun 04.05 | What AI actually does | Translation | Non-tech leaders |
+| 7 | Wed 07.05 | Three signs your dev team is stuck | Industry insight | Non-tech founders |
+| 8 | Fri 09.05 | Praxisansatz / medoc case | Case (USER DRAFT) | Healthcare / B2B |
+| 9 | Sun 11.05 | Measurement company analyst-hours case | Case | Enterprise leaders |
+| 10 | Wed 13.05 | Scoping tech projects | Decision-help | Non-tech founders |
+| 11 | Fri 15.05 | Customer discovery with AI | Case | Founders, product |
+| 12 | Sun 17.05 | Decision log > roadmap | Opinion | Founders, strategy |
 
 ---
 
-## 🎯 Writing principles (v2 — integrated with `feedback_human_writing.md`)
+## 🎯 Writing principles (carried from v2, integrated with `feedback_human_writing.md`)
 
-1. **First 2 lines are the hook.** LinkedIn cuts the post around 200 characters with "see more". Before the cut it must be interesting. The first sentence should make the reader stop scrolling.
-2. **Specifics over abstraction.** Numbers, names, commands, snippets. "12 agents", "47 files", "0 out of 365". Vague = AI smell.
-3. **One idea per post.** Don't try to say everything. 12 sharp thoughts beat 1 vague manifesto.
-4. **No closing CTAs.** No "let me know your thoughts", "curious to hear", "what do you think". A real short question is OK only when it's genuinely open, not a template.
-5. **No emojis in body.** Only line-break bullets. Emojis cheapen the "senior architect" tone. The only exception is the heading emoji in weekly section headers of this file.
-6. **Rotate categories.** Never two Opinion posts in a row. Alternate tone.
-7. **All hard bans from `feedback_human_writing.md` apply:** em dashes, arrows, AI vocab (delve/leverage/robust/journey/landscape/ecosystem), native idioms (pulled the trigger, pick up the torch, from scratch, bandwidth, deep dive), "not X, it's Y" structures, hook→bullets→wrap→question pattern, stacked parallelism.
-8. **Non-native voice.** Simple verbs, plain English, no clever wordplay. A Russian engineer who learned English from docs and Stack Overflow would type this.
+1. **First 2 lines are the hook.** LinkedIn cuts the post around 200 characters with "see more". Before the cut it must be interesting.
+2. **Specifics over abstraction.** Numbers, names, commands. Vague = AI smell.
+3. **One idea per post.** 12 sharp thoughts beat 1 vague manifesto.
+4. **No closing CTAs.** No "let me know your thoughts". A real short question is OK only when it's genuinely open.
+5. **No emojis in body.** Only line-break bullets.
+6. **Rotate categories.** Never two of the same in a row.
+7. **All hard bans from `feedback_human_writing.md` apply.** Em-dash, arrows, AI vocab, native idioms. Especially: "delve / leverage / robust / journey / landscape / ecosystem". And: "pulled the trigger / pick up the torch / from scratch / bandwidth / deep dive / drop you a line / stay on your radar / leading the engagement". And the big one: no "X is not Y, it's Z" structure.
+8. **Non-native simple voice.** A Russian engineer who learned English from docs and Stack Overflow would type this.
+
+---
+
+## ICP voice notes (v3-specific)
+
+- **Don't write to engineers.** No code snippets, no MCP details, no React internals, no Claude Code SOPs. Save those for the product / engineering blog if needed.
+- **Talk in business outcomes.** "3 hours of ops work became zero" beats "we built a self-healing pipeline with retries".
+- **Anchor on real customer language.** "I asked how long it would take, the answer was 'a week or two'". Use the words your buyer actually says.
+- **Show before / after.** Always pair the change with a number. Otherwise it's a vibe.
+- **Avoid first-person grandeur.** "I made the switch in October 2025, best career call in ten years" reads aspirational when you're 6 months in. Stick to observable facts about the work.
 
 ---
 
 ## 🔧 Next actions
 
-- [x] Full audit and English rewrite of all 12 posts (08.04.2026)
-- [ ] Publish Post 1 today (Wed 08.04) via Playwright
-- [ ] Check engagement on Post 1 before Post 2 (Fri 10.04). If the tone is getting zero traction, tighten Posts 2-12 further.
-- [ ] After Week 1 (Sun 12.04), hold a retro and decide whether to keep the Week 2-4 lineup or reshuffle based on what performed.
+- [x] v3 audit and rewrite of Posts 4-12 (29.04.2026)
+- [x] Add UGC Video Platform card to morozco.tech landing
+- [ ] User to draft Post 8 (Praxisansatz / medoc case)
+- [ ] Publish Post 4 on Wed 30.04
+- [ ] After 3 v3 posts, hold retro: engagement vs v2, refine voice if needed

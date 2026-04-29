@@ -332,6 +332,61 @@
       letter-spacing: 0.1em;
     }
 
+    /* ---------- featured (currently engaged) ---------- */
+    .featured-current {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 24px;
+      background: rgba(8, 11, 18, 0.7);
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: start;
+      transition: border-color 300ms ease, box-shadow 300ms ease;
+    }
+    .featured-current:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 24px rgba(138,180,208,0.08);
+    }
+    .featured-current .icon-wrap {
+      aspect-ratio: 1 / 1;
+      border-radius: 4px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-current .icon-wrap svg {
+      width: 72px;
+      height: 72px;
+      opacity: 0.8;
+      transition: opacity 300ms ease;
+    }
+    .featured-current:hover .icon-wrap svg { opacity: 1; }
+    .featured-current h3 {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-2);
+      letter-spacing: 0.05em;
+      margin: 0 0 14px 0;
+    }
+    .featured-current p {
+      color: var(--fg);
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0 0 14px 0;
+    }
+    .featured-current .tech {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
     /* ---------- responsive ---------- */
     @media (max-width: 720px) {
       h1 { font-size: 28px; }
@@ -341,6 +396,8 @@
       .header .nav { display: none; }
       li .k { min-width: 80px; }
       .cards { grid-template-columns: 1fr; }
+      .featured-current { grid-template-columns: 1fr; gap: 20px; }
+      .featured-current .icon-wrap { aspect-ratio: 16 / 9; max-width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -403,8 +460,35 @@
       <p>Four parallel Claude Code sessions, SOP-driven agents, decision logs. Architecture gets tested in code the same week, not in slide decks.</p>
     </section>
 
-    <section class="block" data-range="60,76">
-      <div class="eyebrow">Sector 04 · Portfolio</div>
+    <section class="block" data-range="58,72">
+      <div class="eyebrow">Sector 04 · Currently engaged</div>
+      <h2>Tech lead on a Russian content platform.</h2>
+      <div class="featured-current">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Multi-tenant grid: 4 isolated cells with play triangles -->
+            <rect x="6" y="6" width="16" height="16" rx="1.5" stroke="#8ab4d0" stroke-width="1.5"/>
+            <rect x="26" y="6" width="16" height="16" rx="1.5" stroke="#8ab4d0" stroke-width="1.5" opacity="0.6"/>
+            <rect x="6" y="26" width="16" height="16" rx="1.5" stroke="#8ab4d0" stroke-width="1.5" opacity="0.6"/>
+            <rect x="26" y="26" width="16" height="16" rx="1.5" stroke="#8ab4d0" stroke-width="1.5"/>
+            <path d="M12 11 L17 14 L12 17 Z" fill="#7dd3fc"/>
+            <path d="M32 11 L37 14 L32 17 Z" fill="#7dd3fc" opacity="0.5"/>
+            <path d="M12 31 L17 34 L12 37 Z" fill="#7dd3fc" opacity="0.5"/>
+            <path d="M32 31 L37 34 L32 37 Z" fill="#7dd3fc"/>
+            <line x1="24" y1="3" x2="24" y2="45" stroke="#8ab4d0" stroke-width="0.5" stroke-dasharray="2 3" opacity="0.4"/>
+            <line x1="3" y1="24" x2="45" y2="24" stroke="#8ab4d0" stroke-width="0.5" stroke-dasharray="2 3" opacity="0.4"/>
+          </svg>
+        </div>
+        <div>
+          <h3>UGC Video Platform</h3>
+          <p>Tech lead and architect on a content platform for creators and brands. Two end-to-end subsystems on my desk: regulatory ad-compliance pipeline (~2M creatives a month, zero compliance incidents since go-live) and the multi-tenant team workspace with strict data scopes, so teams inside the same organisation never see each other's tasks, videos or brands. Access enforced at the data boundary, not the UI.</p>
+          <div class="tech">TypeScript · Angular · NestJS · PostgreSQL · Redis · Yandex Cloud · GitLab CI</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" data-range="76,90">
+      <div class="eyebrow">Sector 05 · Portfolio</div>
       <h2>Products I built and run.</h2>
       <div class="cards">
         <div class="card">
@@ -478,8 +562,8 @@
       </div>
     </section>
 
-    <section class="block" data-range="82,100">
-      <div class="eyebrow">Sector 05 · Contact</div>
+    <section class="block" data-range="92,100">
+      <div class="eyebrow">Sector 06 · Contact</div>
       <ul>
         <li><span class="k">Email</span><span class="v"><a href="mailto:kirill@morozco.tech">kirill@morozco.tech</a></span></li>
         <li><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/kirill-morozov-51003037/">in/kirill-morozov-51003037</a></span></li>
@@ -496,7 +580,7 @@
       <div class="hint" id="hint">&gt; SCROLL TO ENGAGE</div>
     </div>
     <div class="col right">
-      <div>SECTOR <span class="num" id="sector">01</span> / 05</div>
+      <div>SECTOR <span class="num" id="sector">01</span> / 06</div>
       <div>PROGRESS <span class="num" id="pct">000</span><span class="num">%</span></div>
       <div>STATUS <span class="hot">NOMINAL</span></div>
     </div>
@@ -825,7 +909,7 @@
           targetT = p;
           progressBar.style.width = (p * 100) + '%';
           for (const b of blocks) b.el.classList.toggle('visible', p >= b.from && p <= b.to);
-          sectorEl.textContent = String(Math.min(5, Math.floor(p * 5) + 1)).padStart(2, '0');
+          sectorEl.textContent = String(Math.min(6, Math.floor(p * 6) + 1)).padStart(2, '0');
           pctEl.textContent = String(Math.floor(p * 100)).padStart(3, '0');
           if (p > 0.02) hint.classList.add('hide'); else hint.classList.remove('hide');
         }
