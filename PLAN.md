@@ -1,6 +1,6 @@
 # MISSION 100K — План и сверка (v3)
 
-> **Обновлено:** 2026-04-26 (воскресенье) · **День 25 / 365** · **Фаза 0 — Фундамент**
+> **Обновлено:** 2026-04-30 (четверг) · **День 29 / 365** · **Фаза 0 — Фундамент**
 > **Финиш:** 1 апреля 2027
 > **Цель baseline:** €30-50K/мес · **Цель stretch:** $100K/мес
 >
@@ -148,14 +148,22 @@ Good News + Beauty News: live, авто-режим, не требуют вним
 - [ ] Пиррон из Элиды (скептик)
 
 ### Чт 30.04
+- [x] **Planning-system upgrade** — 6 паттернов внедрены: contrarian skill, session-close skill, decision_log/_TEMPLATE.md, network/people/ CRM (11 контактов мигрированы), citation format, brain-first protocol. CLAUDE.md 5 → 11 hard rules. План: `~/.claude/plans/breezy-shimmying-crab.md`. Коммит 5ac39bc запушен.
+- [x] LinkedIn EN/RU профиль синхронизирован — "Frontend Web Developer" больше нет, byline теперь "Founder & Solutions Architect"
+- [x] morozco.tech landing — UGC Video Platform добавлен отдельным "Currently engaged" блоком, deployed
+- [x] LinkedIn kit v3 — ICP audit + полная переписка Posts 4-12 под non-tech buyers
+- [x] Praxisansatz/medoc post — RU + EN версии готовы (опубликовано вручную)
 - [ ] Dream Platform: текущая нагрузка
-- [ ] LinkedIn пост #5
 - [ ] System Design: CAP theorem, Consistency patterns (1.5ч)
+- [ ] LinkedIn пост #5 (если будет окно — иначе на пн 5.05)
 
-### Пт 01.05
-- [ ] Ретро недели
+### Пт 01.05 — sprint retro
+- [ ] Ретро недели 26.04 — 03.05
 - [ ] План спринта 2-9 мая
-- [ ] **Decision: первый contractual outreach** — кому из warm network написать на след. неделе (3-5 имён)
+- [ ] **Decision: первый contractual outreach** — выбрать 3-5 контактов из `network/people/` для DM на след. неделе. Брать в порядке: Tier 2/❓ (Kader Djellouli — engineering governance) → Tier 3 контакты с >5 mutual connections → 2nd-degree pending только если accept уже пришёл.
+- [ ] Заполнить температуру (🔥/🟡/🔵) в каждом `network/people/<name>.md`
+- [ ] Заполнить "Откуда знакомы" в Compiled Truth каждого контакта
+- [ ] Дополнить network/people/ ex-коллегами по 4XC / Freedom / SAS / Mediascope (если applicable)
 
 ### Сб-Вс 02-03.05
 - [ ] Календарь: меньше нагрузки, личные дела

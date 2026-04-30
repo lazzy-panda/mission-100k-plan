@@ -1,55 +1,72 @@
-# Handoff — 28.04.2026 вечер → 29.04.2026 утро
+# Handoff — 30.04.2026 вечер → 01.05.2026 утро
 
 ## Где остановились
 
-День 27/365. Вторник вечер. Спринт 26.04—3.05, Phase 0 — Фундамент.
+День 29/365. Четверг вечер. Завтра пятница 01.05 — **sprint retro по неделе 26.04 — 03.05**.
 
-### Что сделано сегодня (28.04)
+### Что сделано сегодня (30.04)
 
-- **Dream Platform: большой блок** — Teams Management (admin привязка к командам, изоляция данных team-to-team по tasks/videos/brands/companies, in-platform calls и team-level workflow controls). Multi-tenant.
-- **Outreach:** написано 3 контактам с бизнес-встречи в Паралимни (24.04). Простой английский, без идиом. Ответов пока нет (норма для +5 дней с момента знакомства, ждём до пятницы).
-- **System Design:** прочитана статья Greiner "CAP Theorem Revisited" — переход от классического CAP к PACELC.
-- **CV переписан** под Tech Lead / Solution Architect (см. `docs/CV-TechLead.md`). Сгенерированы DOCX и HTML с CSS-стилем, готовы к печати в PDF.
-- **CV обновлён вечером:** Dream Platform теперь = "Architect of two end-to-end subsystems" — добавлен блок про team workspace platform с формулировкой "access enforced at the data boundary, not at the UI" (сильный архитекторский сигнал).
-- **LinkedIn:** добавлен morozco.tech в Contact Info.
-- **Уборка репо:** 57MB → 2.7MB. Удалены Notion-скрипты, Playwright-снапшоты, дубли лендинг-картинок. Архивированы LINKEDIN_UPDATE.md, outreach_list.md, outreach_sent_2026-04-07.md в `decision_log/archive/`. Запушено в origin/main (commit 8ac6c40).
-- **Создан README.md** — entry point с индексом ключевых файлов и ссылкой на System Design Primer на GitHub.
-- **Память обновлена:** feedback_human_writing.md расширен 11 новыми non-native idiom-replacement правилами после рефакторинга outreach DM.
-- **Память обновлена:** project_dream_platform.md — engagement начался лето 2025 (LinkedIn разбит на 2 entry для одного проекта), формальный контракт от 5 марта 2026.
-- **Память обновлена:** project_praxis_absatz.md — end date Dec 2025 (не Apr 2025).
+**Planning-system upgrade (большой блок):**
+- Запущены 3 параллельных Explore-агента для research по best AI personal-planning repos. ~45 источников проанализировано.
+- Вердикт: текущий setup (markdown + CLAUDE.md + memory + decision_log) уже SOTA для solo use. Letta benchmarks подтверждают plain filesystem > специализированные frameworks для personal scale.
+- Принято решение: layered upgrade существующего setup, не миграция.
+- 6 паттернов внедрены и закоммичены (commit 5ac39bc):
+  1. `contrarian` skill (`~/.claude/skills/contrarian/SKILL.md`) — auto pre-flight red-team
+  2. `session-close` skill (`~/.claude/skills/session-close/SKILL.md`) — end-of-session consolidation
+  3. `decision_log/_TEMPLATE.md` — confidence + factors + premortem + reality-check
+  4. `network/people/` CRM — 11 контактов мигрированы из старого warm_network.md, append-only timeline, citation format
+  5. Citation format `[Source | YYYY-MM-DD | confidence]` для durable claims
+  6. Brain-first protocol — read memory before answering history questions
+- CLAUDE.md: 5 → 11 hard rules
+- Запушено в origin/main.
+
+**Прочее:**
+- LinkedIn EN/RU профили синхронизированы — byline под постами теперь корректный (не "Frontend Web Developer")
+- morozco.tech landing — UGC Video Platform отдельным "Currently engaged" блоком, deployed на Cloudflare Pages
+- LinkedIn kit v3 — ICP-aligned, posts 4-12 переписаны под non-tech founders
+- Praxisansatz/medoc post — RU + EN версии написаны, ждут публикации (если ещё не опубликовано)
+- Plan documented at `~/.claude/plans/breezy-shimmying-crab.md`
 
 ### Решения дня
-- LinkedIn ≠ CV ≠ memory: разные витрины, разные даты, разные аудитории. CV синхронизирован с LinkedIn-датами.
-- Outreach DM-стиль: простой не-носительский английский, никаких идиом. Применяется ко ВСЕМ дальнейшим текстам.
+- Текущий setup уже SOTA — не мигрируем на Mem0 / Letta / Cassi / другие репо
+- Layered upgrade > greenfield rebuild
+- Free / open-source only constraint соблюдён (никаких платных инструментов)
+- Per-person CRM files побеждают flat warm_network.md
 
 ## С чего начать завтра
 
-### Среда 29.04
-1. **Dream Platform: текущая нагрузка** (8ч)
-2. **Warm network audit** — список 20+ контактов, кто потенциально может вывести на Tech Lead контракт. БЕЗ сообщений сегодня, только список.
-3. **LinkedIn drift fix (5 минут):** добавить буллет про team workspace platform в Dream Platform Experience entry на LinkedIn — синхронизировать с CV.
-4. **System Design (если будет окно, 30-40 мин):** Consistency patterns + Availability patterns в Primer — естественное продолжение после CAP.
+### Пт 01.05 — sprint retro
+1. **Заполнить температуру и "Откуда знакомы"** в каждом `network/people/<name>.md` (11 файлов). Без этого retro не сможет выбрать топ-3-5 для outreach.
+2. **Sprint retro 26.04 — 03.05**: что закрыто, что не закрыто, что переезжает на следующую неделю
+3. **Plan спринт 2-9 мая** — учесть:
+   - Поездка в Грузию 8-13 мая (банковский визит)
+   - LinkedIn outreach к 3-5 warm-контактам
+   - DP-нагрузка (S3 architecture investigation, Gmail account, формы auth wrap-up)
+4. **Decision: первый contractual outreach** — выбрать 3-5 контактов из `network/people/` для DM на след. неделе.
+5. **Дополнить network/people/** ex-коллегами по 4XC / Freedom Finance / SAS / Mediascope (если есть кого добавлять).
 
-### Четверг 30.04
-- LinkedIn пост #4 (Dream Platform case study, без NDA-конкретики) — был перенесён со вторника
-- System Design: CAP theorem deep-dive + Consistency patterns (1.5ч)
-
-### Пт 01.05 — ретро недели + план следующего спринта
-- **Ключевое решение пятницы:** кому из warm network написать на след. неделе по 2-му контракту (3-5 имён)
+### Параллельно на неделе
+- DP architecture: нужен ли S3 при маркировке видео
+- Gmail-почта для Dream Platform
+- LinkedIn пост #5
+- System Design: Consistency patterns + Availability patterns
 
 ## Uncommitted изменения
-- `M PLAN.md` — обновлён прогресс 27.04 + 28.04
-- `?? decision_log/2026-04-26-real-cash-picture.md` — существует, не добавлен в git
-- `?? interview_prep_architect.md` — существует, не добавлен в git
-- `docs/CV-TechLead.md`, `CV-TechLead.docx`, `CV-TechLead.html`, `cv-style.css` — все в `docs/`, gitignored по политике (sensitive)
+- `M PLAN.md` — обновлён прогресс 30.04 + дата stamp
+- `M HANDOFF.md` — этот файл, обновляется
+- `?? morozco-tech-landing/.wrangler/` — gitignored (Cloudflare local cache)
 
 ## Открытые блокеры
-- **2-й контракт:** канал поиска не активирован. Warm network audit = первый шаг (29.04).
-- **Outreach Параlimni-3:** ждём ответа до пятницы 01.05, иначе move on.
-- **Dream Platform контракт до июля-августа 2026:** обсуждение продления нужно начать в июне, не в июле.
+
+- **2-й контракт.** Network funnel запущен (11 контактов). Реалистичный horizon = 6-12 мес (per `feedback_warm_network_logic.md`). DP runway до июля-августа.
+- **Outreach к Параlimni-3** (Николай + коллега + 1) — нет ответов с 28.04. Если до пн 05.05 нет — move on.
+- **DP контракт после июля 2026.** Outcome exogenous, ждём signal от клиента (нет действия).
+- **Грузия trip 8-13 мая** — план в `georgia_trip_checklist.md`, walk-in в Credo Aghmashenebeli Expat SC.
+- **Anthropic Claude API course (CCA-F)** — 0/8 часов, не критично, в фоне.
 
 ## Метрики на сейчас
 - Cash run-rate: €8K/мес (Dream Platform)
-- Runway без замены: 3-4 месяца до cliff
+- Runway без замены: 3-4 месяца до cliff (август 2026)
 - Цель baseline: €30-50K/мес к апр 2027
 - Цель stretch: $100K/мес к апр 2027
+- Network funnel: 11 контактов, 0 outreach отправлено (до retro)
