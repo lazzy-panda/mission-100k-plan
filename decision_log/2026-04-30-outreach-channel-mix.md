@@ -77,3 +77,18 @@ Outreach стратегия для Track 0 P1 (2-й контракт) и Track 2
 ## Updates (append-only)
 
 **2026-04-30:** Решение принято после contrarian review. Сегодня же — обновить PLAN.md sprint 02-09.05 с конкретными action items на каждый channel.
+
+**2026-04-30 (вечер):** Wife direct ask выполнен. Ответ: возможность референса в её circle **зависит от того как пройдёт DP**. [Source: user statement | 2026-04-30 | confidence: high]
+
+Implication: W-канал conditionally available, gating factor = DP performance / visible quality. Это переводит DP с "источник дохода" в "mission-critical asset для warm-network funnel". Высокий leverage:
+- Качество delivery на DP не только сохраняет €8K/мес, но и открывает W
+- Видимость прогресса жене (ambient — не "look at my work", а estественные сигналы: shipped релизы, положительная feedback от команды, архитектурные решения которые она может пересказать) — отдельный sub-track
+- Если DP в августе не продлят — W-канал тоже закрывается
+
+Updated channel ranking (по leverage / speed):
+1. **DP execution + visibility to wife** = highest leverage short-term (gates W)
+2. **W direct asks** = re-trigger когда DP покажет результат (через 4-8 нед)
+3. **B Cyprus meetups + C content** = independent long-term, продолжаем параллельно
+4. **A re-warm Kader/Sergey** = background
+
+Confidence в overall mix не изменилась (70%), но критичность DP performance возросла существенно.
