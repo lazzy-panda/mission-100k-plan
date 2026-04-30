@@ -1,38 +1,46 @@
-# Warm Network Audit — для поиска 2-го контракта
+# Warm Network Audit — index
 
-> **Цель:** список 20+ имён, кто потенциально может вывести на Tech Lead / Solution Architect / Founding Engineer контракт.
-> **Создано:** 29.04.2026 · **Статус:** заполнение
-> **Деадлайн:** до пятницы 01.05 — выбрать 3-5 имён, кому пишем первыми на след. неделе.
+> **Цель:** список 20+ имён, кто потенциально может вывести на Tech Lead / Solution Architect / Founding Engineer контракт ИЛИ Fractional CTO.
+> **Создано:** 2026-04-29 · **Обновлено:** 2026-04-30 (структура: один файл на контакт)
+> **Деадлайн ICP-выбора:** до пятницы 01.05 — выбрать 3-5 имён для первого outreach.
+>
+> **Структура изменилась 2026-04-30:** master record теперь в `network/people/<firstname-lastname>.md` (per-person profile с append-only timeline + цитатами). Этот файл = только индекс.
 
-## Правила заполнения
+## Индекс контактов
 
-- **БЕЗ сообщений сегодня.** Только сбор имён.
-- Если сомневаешься "стоит ли добавлять" — добавляй. Сократить можно потом.
-- Цель не "отличные" имена, а **достаточно широкая воронка**, чтобы 3-5 серьёзных переговоров могли вырасти.
+| # | Имя | Tier | Темп. | Файл |
+|---|-----|------|-------|------|
+| 1 | Ivan Maslov — CEO ORPA INNOVATIONS (RPA) | 3 | ❓ | [ivan-maslov.md](network/people/ivan-maslov.md) |
+| 2 | Olga Svetlorusova — Financial Controller, BIC | 3 | ❓ | [olga-svetlorusova.md](network/people/olga-svetlorusova.md) |
+| 3 | Daria Kostyleva — Manager, PwC | 3 | ❓ | [daria-kostyleva.md](network/people/daria-kostyleva.md) |
+| 4 | Sergey Mochalin — Java/Backend, Teya (ex-PwC) | 3 | ❓ | [sergey-mochalin.md](network/people/sergey-mochalin.md) |
+| 5 | Irina Gorbunova — Strategy, Berlin (ex-PwC) | 3 | ❓ | [irina-gorbunova.md](network/people/irina-gorbunova.md) |
+| 6 | Marina Avdienkova — Consulting Director (ex-PwC) | 3 | ❓ | [marina-avdienkova.md](network/people/marina-avdienkova.md) |
+| 7 | Natalia Parygina — SKOLKOVO ⚠ 2nd-degree pending | 3 | ❓ | [natalia-parygina.md](network/people/natalia-parygina.md) |
+| 8 | Olga Kurnosova — Marketing, Sberbank | 3 | ❓ | [olga-kurnosova.md](network/people/olga-kurnosova.md) |
+| 9 | Marina Saar — MTS AI ⚠ 2nd-degree (РГГУ alumna) | 3 | ❓ | [marina-saar.md](network/people/marina-saar.md) |
+| 10 | Ekaterina Ponoyanova — Marketing Boutique ⚠⚠ 2nd-degree pending, 2 mutuals | 3 | ❓ | [ekaterina-ponoyanova.md](network/people/ekaterina-ponoyanova.md) |
+| 11 | Kader Djellouli — VICORY™ engineering governance | **2** | ❓ | [kader-djellouli.md](network/people/kader-djellouli.md) |
 
-## Категории температуры
+## Tier definitions
+
+- **Tier 3 (stub):** 1 mention. Name + role + 1-line context. Keep watching.
+- **Tier 2 (moderate):** 3+ mentions OR active touch (DM exchanged) OR direct relevance to current channel. Snapshot, working style, where useful.
+- **Tier 1 (full):** real meeting completed OR 8+ mentions OR live deal in pipeline. Complete profile.
+
+## Temperature definitions
 
 - 🔥 **Hot** — общались за последние 6 мес, в курсе текущей жизни друг друга, могу написать без объяснения "кто я"
 - 🟡 **Warm** — общались 1-3 года назад, хорошие отношения, нужно короткое напоминание контекста
 - 🔵 **Cold-warm** — знакомы по работе/проектам, общался редко или давно, но они меня помнят
 
-## Таблица
+## TODO Кириллу (открытые вопросы по индексу)
 
-| # | Имя | Компания (текущая) | Роль | Откуда знакомы | Темп. | Чем может быть полезен |
-|---|-----|-------------------|------|----------------|-------|------------------------|
-| 1 | [Ivan Maslov](https://www.linkedin.com/in/ru-ivanmaslov/) | ORPA INNOVATIONS (pyOpenRPA) | CEO | (заполни сам) | ❓ | CEO RPA-компании, синергия с AI/agentic. Может ввести в RU automation/founders network. |
-| 2 | [Olga Svetlorusova](https://www.linkedin.com/in/olga-svetlorusova-42316098/) | BIC | Financial Controller / Internal Auditor | (заполни сам) | ❓ | Финансист (не Tech Lead-path напрямую), но 8 mutual connections = broad network. Может вывести на CFO/финдиректоров компаний, ищущих fractional tech leadership. |
-| 3 | [Daria Kostyleva](https://www.linkedin.com/in/daria-kostyleva-31697067/) | PwC | Manager — Tax Reporting and Strategy | PwC (Кирилл там работал 2010-2013) | ❓ | PwC-сеть = доступ к корпоративным клиентам Big-4, которые могут нанимать Tech Lead / Fractional CTO. 8 mutual connections (Sergey, Marina + 6). |
-| 4 | [Sergey Mochalin](https://www.linkedin.com/in/sergeymochalin/) | Teya | Java Developer / Backend (ex-PwC) | PwC | ❓ | Прямой собрат-разработчик Backend, ex-PwC, сейчас в Teya (Риге). Может вывести в EU fintech tech-комьюнити. 15 mutual = широкая сеть. |
-| 5 | [Irina Gorbunova](https://www.linkedin.com/in/irina-gorbunova-strategy/) | Center for Strategic Research | Strategy / Consulting / Climate (ex-PwC) | PwC | ❓ | Strategy consulting / public policy. Не tech напрямую, но Berlin-based стратеги часто работают с компаниями, нанимающими fractional CTO для climate/sustainability tech. |
-| 6 | [Marina Avdienkova](https://www.linkedin.com/in/marina-avdienkova/) | Center for Tax Policy | Consulting Director (ex-PwC) | PwC | ❓ | Senior consulting role, российская tax/policy. Может выводить на корпоративных клиентов нуждающихся в архитектуре для compliance/regtech. |
-| 7 | [Natalia Parygina](https://www.linkedin.com/in/natalia-parygina/) | Moscow School of Management SKOLKOVO | Customer Experience School Leader | (заполни сам — connection pending) | ❓ | ⚠ **2nd-degree, request pending** — пока не accept. SKOLKOVO = hub for senior Russian execs/founders, может вывести на C-level клиентов под Fractional CTO. |
-| 8 | [Olga Kurnosova](https://www.linkedin.com/in/okurnosova/) | Sberbank | Marketing Team Leader | (заполни сам) | ❓ | Marketing-роль (не tech-path), но Sberbank = крупнейший RU-банк с большим in-house tech. Может вывести на digital-leadership Сбера, ищущих архитекторов под GenAI / клиентский tech. 2 mutual только. |
-| 9 | [Marina Saar](https://www.linkedin.com/in/me-saar/) | MTS AI / Intema | Head of Digital Marketing | (заполни сам — РГГУ alumna, 2nd-degree) | ❓ | ⚠ **2nd-degree.** MTS AI = крупный RU AI-vendor. Head of digital marketing там = доступ к команде, нанимающей AI/ML-инженеров и архитекторов. Same university (РГГУ) = warm intro hook. Базируется в Сеуле. |
-| 10 | [Ekaterina Ponoyanova](https://www.linkedin.com/in/ekaterina-ponoyanova-46385021/) | 365 Marketing Boutique | Marketing & PR | (заполни сам — pending) | ❓ | ⚠ **2nd-degree, request pending.** Marketing & PR / boutique. Singapore. Слабый сигнал для tech-найма, но 2 mutual. |
-| 11 | [Kader Djellouli](https://www.linkedin.com/in/kader-djellouli-4a73102a5/) | VICORY™ (own venture) | Capital Allocation & Systemic Governance / Senior Lean Agile Master | (заполни сам) | ❓ | 💪 **Сильный signal.** Engineering governance consultant ("Turn Engineering from Cost Center into Governable Asset"). Marseille, France. Точно в той же зоне где Tech Lead/Architect нанимают — он либо консультирует компании, ищущие архитекторов, либо нужен сам тебе как architect-advisor. 5 mutual. |
+- Проставить температуру (🔥/🟡/🔵) для каждого контакта в его per-person файле
+- Заполнить "Source-of-relationship" / "Откуда знакомы" в Compiled Truth каждого
+- К пятнице 01.05 — выбрать 3-5 имён для первого outreach на след. неделе
 
-## Источники, где копать (чек-лист)
+## Источники, где докопать (чек-лист — не закрыт)
 
 ### Бывшие коллеги (по компаниям)
 - [ ] **4XC** (Limassol, 2023) — frontend group из 5 человек, кто из них где сейчас?
@@ -43,7 +51,6 @@
 
 ### Через текущего клиента
 - [ ] **НТС «Градиент»** — 10 разработчиков на стороне клиента, есть с кем-то контакт?
-- [ ] Знакомые из их сети, кто упоминался в созвонах
 
 ### Кипрский нетворк
 - [ ] Параlimni-встреча 24.04 — 3 контакта уже написаны (Николай + коллега + 1)
@@ -51,12 +58,10 @@
 - [ ] Русскоязычный Кипр — Telegram-чаты, IT-meetups
 
 ### LinkedIn 1-й круг
-- [ ] Прогон по 1-му кругу (500+ connections): кто сейчас CTO/Head of Engineering/Founder и может нанимать или рекомендовать
-- [ ] Кто из старых знакомых стал founder за последние 2-3 года
+- [ ] Прогон по 1-му кругу (500+ connections) — кто сейчас CTO/Head of Engineering/Founder
 
 ### Founders / co-workers, ставшие СTO
-- [ ] Кого знаешь, кто сейчас сам строит компанию и может нуждаться в архитекторе?
-- [ ] Кого из ex-коллег "повысили" в leadership, кто может нанимать
+- [ ] Кто из старых знакомых сейчас сам строит компанию
 
 ### Другое
 - [ ] Старые клиенты Praxisansatz (если были B2B контакты помимо клиник)
@@ -64,7 +69,16 @@
 
 ## После заполнения (пятница 01.05)
 
-1. Отсортировать по темп. (🔥 → 🟡 → 🔵)
-2. Внутри каждой группы — отсортировать по "вероятность ответа × качество вывода"
-3. Выбрать **3-5 топ-имён** для первого outreach на след. неделе
-4. По каждому — подготовить короткий, специфичный DM (правила в `feedback_human_writing.md`)
+1. Просмотреть все per-person файлы
+2. Отсортировать по темп. (🔥 → 🟡 → 🔵) и Tier
+3. Внутри группы — отсортировать по "вероятность ответа × качество вывода"
+4. Выбрать **3-5 топ-имён** для первого outreach на след. неделе
+5. Добавить запись в их per-person timeline когда DM отправлен / получен ответ
+
+## Конвенция работы с network/people/
+
+- Master record — per-person файл. Этот index только для навигации.
+- Все факты — с цитированием: `[Source: file | YYYY-MM-DD | confidence: high|medium|low]`
+- Timeline append-only — никогда не переписываем, только добавляем
+- Tier-эскалация: 3 → 2 при 3+ mentions / active touch; 2 → 1 при meeting / 8+ mentions
+- Когда пользователь упоминает контакт — Claude читает per-person файл первым (brain-first protocol)

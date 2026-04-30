@@ -25,3 +25,6 @@ docs/
 .env.*
 *.key
 *_secret*
+
+# Cloudflare wrangler local cache
+.wrangler/
