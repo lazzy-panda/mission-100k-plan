@@ -37,3 +37,6 @@ location: Saint Petersburg, Russia
 
 ### 2026-04-29 — first capture
 - Added to warm-network audit. Source: Kirill submitted LinkedIn URL during Track 2 funnel building. [Source: user statement | 2026-04-29 | confidence: high]
+
+### 2026-04-30 — relationship source confirmed
+- PwC era contact (Kirill worked at PwC Russia 2010–2013). [Source: user statement | 2026-04-30 | confidence: high]

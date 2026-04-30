@@ -36,3 +36,6 @@ location: Greater Marseille, France
 
 ### 2026-04-29 — first capture
 - Added to warm-network audit. Flagged as highest-relevance candidate of the audit batch. [Source: user statement | 2026-04-29 | confidence: high]
+
+### 2026-04-30 — relationship source confirmed
+- 4XC era contact (Kirill worked at 4XC, Limassol Cyprus, Feb 2023 – Aug 2023, as Senior Frontend Developer / de-facto architect). [Source: user statement | 2026-04-30 | confidence: high]
