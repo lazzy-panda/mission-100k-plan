@@ -2,7 +2,7 @@
 type: contact
 name: Kader Djellouli
 tier: 2
-temp: ❓
+temp: 🔵
 last_contact: 2026-04-29
 linkedin: https://www.linkedin.com/in/kader-djellouli-4a73102a5/
 location: Greater Marseille, France

@@ -10,17 +10,17 @@
 
 | # | Имя | Tier | Темп. | Файл |
 |---|-----|------|-------|------|
-| 1 | Ivan Maslov — CEO ORPA INNOVATIONS (RPA) | 3 | ❓ | [ivan-maslov.md](network/people/ivan-maslov.md) |
-| 2 | Olga Svetlorusova — Financial Controller, BIC | 3 | ❓ | [olga-svetlorusova.md](network/people/olga-svetlorusova.md) |
-| 3 | Daria Kostyleva — Manager, PwC | 3 | ❓ | [daria-kostyleva.md](network/people/daria-kostyleva.md) |
-| 4 | Sergey Mochalin — Java/Backend, Teya (ex-PwC) | 3 | ❓ | [sergey-mochalin.md](network/people/sergey-mochalin.md) |
-| 5 | Irina Gorbunova — Strategy, Berlin (ex-PwC) | 3 | ❓ | [irina-gorbunova.md](network/people/irina-gorbunova.md) |
-| 6 | Marina Avdienkova — Consulting Director (ex-PwC) | 3 | ❓ | [marina-avdienkova.md](network/people/marina-avdienkova.md) |
-| 7 | Natalia Parygina — SKOLKOVO ⚠ 2nd-degree pending | 3 | ❓ | [natalia-parygina.md](network/people/natalia-parygina.md) |
-| 8 | Olga Kurnosova — Marketing, Sberbank | 3 | ❓ | [olga-kurnosova.md](network/people/olga-kurnosova.md) |
-| 9 | Marina Saar — MTS AI ⚠ 2nd-degree (РГГУ alumna) | 3 | ❓ | [marina-saar.md](network/people/marina-saar.md) |
-| 10 | Ekaterina Ponoyanova — Marketing Boutique ⚠⚠ 2nd-degree pending, 2 mutuals | 3 | ❓ | [ekaterina-ponoyanova.md](network/people/ekaterina-ponoyanova.md) |
-| 11 | Kader Djellouli — VICORY™ engineering governance | **2** | ❓ | [kader-djellouli.md](network/people/kader-djellouli.md) |
+| 1 | Ivan Maslov — CEO ORPA INNOVATIONS (RPA) | 3 | 🔵 | [ivan-maslov.md](network/people/ivan-maslov.md) |
+| 2 | Olga Svetlorusova — Financial Controller, BIC | 3 | 🔵 | [olga-svetlorusova.md](network/people/olga-svetlorusova.md) |
+| 3 | Daria Kostyleva — Manager, PwC | 3 | 🔵 | [daria-kostyleva.md](network/people/daria-kostyleva.md) |
+| 4 | Sergey Mochalin — Java/Backend, Teya (ex-PwC) | 3 | 🔵 | [sergey-mochalin.md](network/people/sergey-mochalin.md) |
+| 5 | Irina Gorbunova — Strategy, Berlin (ex-PwC) | 3 | 🔵 | [irina-gorbunova.md](network/people/irina-gorbunova.md) |
+| 6 | Marina Avdienkova — Consulting Director (ex-PwC) | 3 | 🔵 | [marina-avdienkova.md](network/people/marina-avdienkova.md) |
+| 7 | Natalia Parygina — SKOLKOVO ⚠ 2nd-degree pending | 3 | 🔵 | [natalia-parygina.md](network/people/natalia-parygina.md) |
+| 8 | Olga Kurnosova — Marketing, Sberbank | 3 | 🔵 | [olga-kurnosova.md](network/people/olga-kurnosova.md) |
+| 9 | Marina Saar — MTS AI ⚠ 2nd-degree (РГГУ alumna) | 3 | 🔵 | [marina-saar.md](network/people/marina-saar.md) |
+| 10 | Ekaterina Ponoyanova — Marketing Boutique ⚠⚠ 2nd-degree pending, 2 mutuals | 3 | 🔵 | [ekaterina-ponoyanova.md](network/people/ekaterina-ponoyanova.md) |
+| 11 | Kader Djellouli — VICORY™ engineering governance | **2** | 🔵 | [kader-djellouli.md](network/people/kader-djellouli.md) |
 
 ## Tier definitions
 

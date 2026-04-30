@@ -2,7 +2,7 @@
 type: contact
 name: Olga Svetlorusova
 tier: 3
-temp: ❓
+temp: 🔵
 last_contact: 2026-04-29
 linkedin: https://www.linkedin.com/in/olga-svetlorusova-42316098/
 location: United States

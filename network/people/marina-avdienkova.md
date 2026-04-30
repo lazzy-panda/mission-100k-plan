@@ -2,7 +2,7 @@
 type: contact
 name: Marina Avdienkova
 tier: 3
-temp: ❓
+temp: 🔵
 last_contact: 2026-04-29
 linkedin: https://www.linkedin.com/in/marina-avdienkova/
 location: Moscow, Russia

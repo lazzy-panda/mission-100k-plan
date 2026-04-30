@@ -2,7 +2,7 @@
 type: contact
 name: Ivan Maslov
 tier: 3
-temp: ❓
+temp: 🔵
 last_contact: 2026-04-29
 linkedin: https://www.linkedin.com/in/ru-ivanmaslov/
 location: Saint Petersburg, Russia

@@ -2,7 +2,7 @@
 type: contact
 name: Ekaterina Ponoyanova
 tier: 3
-temp: ❓
+temp: 🔵
 last_contact: 2026-04-29
 linkedin: https://www.linkedin.com/in/ekaterina-ponoyanova-46385021/
 location: Singapore
