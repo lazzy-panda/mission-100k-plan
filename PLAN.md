@@ -164,12 +164,53 @@ Good News + Beauty News: live, авто-режим, не требуют вним
 - [ ] Дополнить network/people/ ex-коллегами по 4XC / Freedom / SAS / Mediascope (если applicable)
 
 ### Сб-Вс 02-03.05
-- [ ] Календарь: меньше нагрузки, личные дела
-- [ ] Lingo dogfood (греческий)
+- [x] Календарь: меньше нагрузки, личные дела
+- [x] Греческий dogfood
 
-### Параллельно на неделе (cross-day backlog)
-- [ ] **DP architecture:** на сколько нам нужен S3 при маркировке видео и нужен ли вообще?
-- [ ] Завести Gmail-почту для Dream Platform (admin)
+---
+
+## 4b. Спринт: 4-10 мая 2026 (Грузинская неделя)
+
+> Главное событие: **поездка в Грузию 8 мая (чт) → walk-in в Credo Aghmashenebeli Expat SC 11.05 (пн) или 13.05 (ср)**. План: `georgia_trip_checklist.md`.
+>
+> Стратегия после 04.05: DP mission-critical (cash + W-канал proof asset), Lingo CLOSED, outreach mix B+C+A+W активен.
+
+### Пн 04.05 (сегодня)
+- [ ] DP: текущая нагрузка, focus на visible shipping rhythm
+- [ ] Sprint planning + retro прошлой недели (этот блок)
+- [ ] Грузия prep: бронь отеля в Тбилиси (3-5 ночей), проверить документы
+- [ ] LinkedIn Post #4 (When non-tech founders should hire a Tech Lead) — публикация (kit v3 ready, был запланирован на 30.04)
+
+### Вт 05.05
+- [ ] DP: текущая нагрузка
+- [ ] W: ambient update жене про DP (что shipped на этой неделе) — 5 минут
+- [ ] System Design: CAP theorem + Consistency patterns (1ч, не 1.5ч)
+- [ ] Грузия prep: проверить выписки Tinkoff за 6 мес (PDF на английском)
+
+### Ср 06.05
+- [ ] DP: текущая нагрузка
+- [ ] LinkedIn Post #5 (How a content platform survived a hard legal deadline — DP case)
+- [ ] Грузия prep: cash $500-1000, грузинская SIM план, expat-branch подтверждение
+
+### Чт 07.05 (последний рабочий день перед поездкой)
+- [ ] DP: закрыть мелкие хвосты, оставить чистый state перед поездкой
+- [ ] Финальная проверка пакета документов на Грузию
+- [ ] A: 1 substantive comment под недавним постом Kader Djellouli ИЛИ Sergey Mochalin
+
+### Пт 08.05 — вечерний рейс в Грузию
+- [ ] DP: лёгкая нагрузка / async (если возможно)
+- [ ] Прилёт вечером, заселение в отель, грузинская SIM в аэропорту
+- [ ] Cyprus meetup research: что есть в мае на B-канал
+
+### Сб-Вс 09-10.05
+- [ ] Тбилиси: walking around, отдых после перелёта
+- [ ] Воскресенье: подготовка к понедельничному визиту в Credo
+
+### Параллельно на неделе
+- [ ] **DP architecture:** нужен ли S3 при маркировке видео (carry over с прошлой недели)
+- [ ] Завести Gmail-почту для Dream Platform (carry over)
+- [ ] Cyprus IT meetup calendar май — найти ≥1 для B-канала
+- [ ] Дополнить network/people/ ex-коллегами 4XC / Freedom / SAS / Mediascope (если applicable)
 
 ---
 
