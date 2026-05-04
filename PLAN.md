@@ -14,7 +14,7 @@
 |----------|--------|-------|-------------|
 | Dream Platform | Активный контракт | **€8K/мес** | До июля-августа 2026, потом ❓ |
 | Praxisansatz | Завершён ~апрель 2025 | €0 | Portfolio piece, не реанимируем |
-| Lingo | В разработке (60%) | €0 | SaaS-bet, long-term |
+| Lingo | **Closed 04.05.2026** | €0 | Personal dogfood (греческий), commercial track killed |
 | Cyprus Tax Calc | В разработке | €0 | Лид-магнит, не SaaS |
 | Daxi | Готов, заморожен | €0 | Не продаём |
 | Good/Beauty News | Live, без монетизации | €0 | Фон |
@@ -60,12 +60,10 @@
 
 **Цель:** 1-2 клиента к концу сентября (медленный канал, не критичный для runway).
 
-### Track 3 — Lingo (единственный SaaS-bet)
-**Статус:** 60% ready, 4 урока, 80 заданий, 11 типов упражнений.
+### Track 3 — Lingo (CLOSED 04.05.2026)
+**Статус:** Formal kill. Decision: `decision_log/2026-05-04-lingo-formal-kill.md`.
 
-**Стратегия:** dogfood (Кирилл сам учит греческий каждый день), наполнение контентом до 15+ уроков.
-**Hard kill:** 10 платящих к 30.06 или признаём side-project.
-**Bandwidth:** 10-15 ч/нед максимум — после контрактной работы.
+Lingo живёт как personal dogfood (Кирилл сам учит греческий ежедневно). Коммерческие цели сняты — высвобожденное время идёт в DP execution + B+C+A+W каналы. Reopen возможен только через явный новый decision_log entry с обоснованием.
 
 ### Track 4 — Медиа-автоматизация (фон)
 Good News + Beauty News: live, авто-режим, не требуют внимания. Растим органически.
@@ -191,14 +189,14 @@ Good News + Beauty News: live, авто-режим, не требуют вним
 - [ ] Первые 5-10 warm-outreach сообщений по 2-му контракту
 - [ ] LinkedIn пост #1 — Dream Platform case study (без NDA)
 - [ ] LinkedIn пост #2 — Praxisansatz case study
-- [ ] Lingo: 10+ уроков, daily dogfood
+- ~~Lingo: 10+ уроков, daily dogfood~~ — Track 3 closed 04.05, dogfood-only без commercial цели
 - [ ] Cyprus Tax Calc: MVP в работе
 - [ ] System Design прокачан (System Design Primer полностью + 4 задачи)
 
 ### Июнь 2026
 - [ ] Negotiate продление Dream Platform после августа
 - [ ] 2-й контракт: 2+ серьёзных переговора в pipeline
-- [ ] Lingo: 10 платящих или признаём side-project
+- ~~Lingo: 10 платящих или признаём side-project~~ — преждевременно kill'нуто 04.05 (см. decision_log/2026-05-04-lingo-formal-kill.md)
 - [ ] Cyprus Tax Calc запущен публично
 - [ ] CCA-F курс закрыт
 
@@ -209,12 +207,12 @@ Good News + Beauty News: live, авто-режим, не требуют вним
 | Период | Baseline (€) | Stretch ($) |
 |--------|--------------|-------------|
 | Апрель 2026 | €8K (Dream Platform) | $9K |
-| Май-Июнь | €8-10K (DP + Lingo dogfood) | $9-11K |
-| Июль-Август | €8-15K (DP + 2-й контракт начинается) | $9-16K |
-| Сен-Дек | €15-25K (2 контракта + Lingo MRR) | $20-40K |
-| Янв-Мар 2027 | **€30-50K** (2-3 контракта + Fractional + Lingo) | **$50-100K** |
+| Май-Июнь | €8K (DP) | $9K |
+| Июль-Август | €8-15K (DP + W/C funnel matures) | $9-16K |
+| Сен-Дек | €15-25K (2 контракта или Fractional + DP) | $20-40K |
+| Янв-Мар 2027 | **€30-50K** (2-3 контракта + Fractional CTO) | **$50-100K** |
 
-**Baseline = твёрдая цель.** Stretch = если Lingo взлетит, Fractional CTO даст 2+ клиентов, или появится 3-й контракт.
+**Baseline = твёрдая цель.** Stretch = если Fractional CTO даст 2+ клиентов или появится 3-й контракт. (Lingo больше не входит в выручку — Track 3 closed 04.05.)
 
 ---
 
@@ -225,7 +223,7 @@ Good News + Beauty News: live, авто-режим, не требуют вним
 | Dream Platform (контракт) | **Cash engine #1** | **P1** |
 | 2-й контракт (поиск) | **Cash engine #2 / runway insurance** | **P1** |
 | Fractional CTO | Канал 3, медленный inbound | P2 |
-| Lingo | SaaS-bet, long-term | P3 |
+| Lingo | **CLOSED 04.05** — personal dogfood only | — |
 | Cyprus Tax Calc | Лид-магнит для Fractional | P3 |
 | Praxisansatz | **Portfolio only** (завершён) | — |
 | Daxi | Заморожен | — |
@@ -253,8 +251,8 @@ Good News + Beauty News: live, авто-режим, не требуют вним
 - Год простоя = 2-3 мес работы только чтобы стало продаваемым
 - **Митигация:** решение зафиксировано в decision log. Praxis = portfolio only. Если возвращаемся — нужно явное переподписание решения.
 
-### P4: Lingo съедает время без revenue
-- Hard kill 30.06: 10 платящих или side-project
+### ~~P4: Lingo съедает время без revenue~~ — снят 04.05
+- Решение: Track 3 закрыт. Lingo = personal dogfood. Освобождённое время идёт в DP+B+C+A+W mix.
 - Без жёсткого предела превратится в долгострой
 
 ---
